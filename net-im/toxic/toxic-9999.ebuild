@@ -45,8 +45,4 @@ src_prepare() {
 
 pkg_postinst() {
 	elog "DHT node list is available in /usr/share/${PN}/DHTservers"
-	elog "You should run \"cp /usr/share/${PN}/DHTservers \$HOME/.config/tox/\""
-	elog ""
-	elog "\"\$HOME/.config/toxic/\" has been depreciated, "
-	elog "please move contents to the shared configdir \$HOME/.config/tox/"
 }
