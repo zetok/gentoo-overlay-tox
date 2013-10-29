@@ -5,7 +5,7 @@
     <name>tox-overlay</name>
     <description>Ebuilds for Tox and Toxic. Both Ebuilds were taken from https://suigintou.weedy.ca/trac/gentoo-overlay/</description>
     <homepage>https://github.com/fr0stycl34r/gentoo-overlay-tox</homepage>
-    <owner type="project">
+    <owner>
       <email>an0n102968@riseup.net</email>
       <name>cl34r</name>
     </owner>
