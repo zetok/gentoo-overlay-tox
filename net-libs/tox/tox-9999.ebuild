@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-RDEPEND="net-libs/libsodium
+RDEPEND="dev-libs/libsodium
 	dev-libs/check
 	dev-libs/libconfig
 	sys-libs/ncurses"
