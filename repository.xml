@@ -4,12 +4,11 @@
   <repo quality="experimental" status="unofficial">
     <name>tox-overlay</name>
     <description>Ebuilds for Tox and Toxic. Both Ebuilds were taken from https://suigintou.weedy.ca/trac/gentoo-overlay/</description>
-    <homepage>https://suigintou.weedy.ca/trac/gentoo-overlay/timeline </homepage>
+    <homepage>https://github.com/fr0stycl34r/gentoo-overlay-tox</homepage>
     <owner type="project">
       <email>an0n102968@riseup.net</email>
       <name>cl34r</name>
     </owner>
-    <source type="svn">https://suigintou.weedy.ca/svn/gentoo-overlay</source>
-    <feed>https://suigintou.weedy.ca/trac/gentoo-overlay/timeline?milestone=on&amp;ticket=on&amp;changeset=on&amp;wiki=on&amp;max=50&amp;authors=&amp;daysback=90&amp;format=rss</feed>
+    <source type="git">git://github.com/fr0stycl34r/gentoo-overlay-tox.git</source>
   </repo>
 </repositories>
