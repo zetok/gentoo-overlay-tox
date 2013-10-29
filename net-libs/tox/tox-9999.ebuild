@@ -45,9 +45,5 @@ src_prepare() {
 #}
 
 pkg_postinst() {
-	elog "Tox docs are built by sphinx."
-	elog "https://projecttox.readthedocs.org/en/latest/start_guide.html"
-	elog "https://projecttox.readthedocs.org/en/latest/commands.html"
 	elog ""
-	elog "You probably want to install net-im/toxic"
 }
