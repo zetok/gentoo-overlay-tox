@@ -18,7 +18,6 @@ IUSE=""
 RDEPEND="dev-libs/libsodium
 	dev-libs/check
 	dev-libs/libconfig
-	media-video/ffmpeg
 	sys-libs/ncurses"
 
 DEPEND="${RDEPEND}
