@@ -3,11 +3,11 @@
 <repositories xmlns="" version="1.0">
   <repo quality="experimental" status="unofficial">
     <name>tox-overlay</name>
-    <description>Ebuilds for Tox and Toxic. Both Ebuilds were taken from https://suigintou.weedy.ca/trac/gentoo-overlay/</description>
+    <description lang="en">Ebuilds for Tox and Toxic. Both Ebuilds were taken from https://suigintou.weedy.ca/trac/gentoo-overlay/</description>
     <homepage>https://github.com/fr0stycl34r/gentoo-overlay-tox</homepage>
-    <owner>
-      <email>an0n102968@riseup.net</email>
-      <name>cl34r</name>
+    <owner type="person">
+		<email>an0n102968@riseup.net</email>
+		<name>cl34r</name>
     </owner>
     <source type="git">git://github.com/fr0stycl34r/gentoo-overlay-tox.git</source>
     <feed>https://github.com/fr0stycl34r/gentoo-overlay-tox/commits/master.atom</feed>
