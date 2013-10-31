@@ -7,7 +7,7 @@ EAPI=5
 inherit autotools eutils git-2
 
 DESCRIPTION="Encrypted, decentralized messenging platform"
-HOMEPAGE="https://github.com/irungentoo/ProjectTox-Core"
+HOMEPAGE="http://wiki.tox.im/Toxic"
 EGIT_REPO_URI="https://github.com/Tox/toxic.git"
 
 LICENSE="GPL-3"
