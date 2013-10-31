@@ -20,7 +20,7 @@ IUSE=""
 
 DEPEND="dev-libs/glib:2
 		dev-libs/libgee:0.8
-		net-im/tox-core
+		net-libs/tox
 		x11-libs/gtk+:3
 		$(vala_depend)"
 RDEPEND="${DEPEND}"
