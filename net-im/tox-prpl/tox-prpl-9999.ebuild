@@ -19,7 +19,7 @@ IUSE=""
 RDEPEND="
 	dev-libs/glib:2
 	net-im/pidgin
-	net-im/tox"
+	net-libs/tox"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
