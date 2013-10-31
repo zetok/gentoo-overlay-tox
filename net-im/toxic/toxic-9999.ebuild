@@ -26,7 +26,6 @@ DEPEND="${RDEPEND}
 	sys-devel/libtool"
 
 src_prepare() {
-#	epatch "${FILESDIR}"/${PN}-look-in-shared-for-DHT.patch
 	eautoreconf
 }
 
