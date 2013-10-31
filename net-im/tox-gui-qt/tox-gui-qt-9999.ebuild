@@ -17,7 +17,7 @@ KEYWORDS="-*"
 IUSE=""
 
 RDEPEND="
-	net-im/tox-core
+	net-libs/tox
 	dev-qt/qtcore:5
 	dev-qt/qtdeclarative:5
 	dev-qt/qtwidgets:5
