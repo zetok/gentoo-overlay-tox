@@ -9,13 +9,12 @@ inherit cmake-utils git-r3 vala
 DESCRIPTION="Vala/Gtk+ graphical user interface for Tox"
 
 HOMEPAGE="http://wiki.tox.im/Venom"
-EGIT_REPO_URI="git://github.com/naxuroqa/Venom.git
-			   https://github.com/naxuroqa/Venom.git"
-EGIT_COMMIT="599e1cb038f1b499c165b9a2bf6228dd08462068"
+EGIT_REPO_URI="https://github.com/naxuroqa/Venom.git"
+
 
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE=""
 
 DEPEND="dev-libs/glib:2
