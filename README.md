@@ -1,7 +1,7 @@
 Just run:
     
     sudo su
-    layman -f -o http://raw.github.com/fr0stycl34r/gentoo-overlay-tox/master/repository.xml -a tox-overlay
+    layman -f -o https://raw.github.com/fr0stycl34r/gentoo-overlay-tox/master/repository.xml -a tox-overlay
     layman -S
     emerge --sync
 
