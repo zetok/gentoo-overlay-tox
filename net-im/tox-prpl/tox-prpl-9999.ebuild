@@ -7,7 +7,7 @@ EAPI=5
 inherit eutils autotools git-2
 
 DESCRIPTION="Tox plugin for Pidgin/libpurple"
-HOMEPAGE="https://github.com/jin-eld/tox-prpl"
+HOMEPAGE="http://tox.dhs.org/"
 SRC_URI=""
 EGIT_REPO_URI="https://github.com/jin-eld/tox-prpl.git"
 
