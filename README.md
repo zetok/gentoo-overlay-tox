@@ -7,6 +7,6 @@ Just run:
 
 *Note: These ebuilds were forked from https://suigintou.weedy.ca/trac/gentoo-overlay/*
 ***
-WARNING
+WARNING:
 The QT GUI Ebuild is broken. I will be working on fixing it later. Any contributions are always welcome.
 ***
