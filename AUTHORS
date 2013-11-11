@@ -1,0 +1,5 @@
+# These ebuilds were taken from the following repositories
+#net-im/tox-gui-qt from https://github.com/msva
+#net-libs/tox and net-im/toxic from https://suigintou.weedy.ca/trac/gentoo-overlay
+#net-im/tox-prpl from https://github.com/hasufell
+#net-im/venom, net-libs/tox, and net-im/toxic from http://git.overlays.gentoo.org/gitweb/?p=user/emery.git
