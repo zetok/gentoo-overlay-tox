@@ -8,8 +8,9 @@ inherit autotools eutils git-2
 
 DESCRIPTION="Encrypted, decentralized messenging platform"
 HOMEPAGE="http://wiki.tox.im/Toxic"
-EGIT_REPO_URI="https://github.com/Tox/toxic.git"
-
+EGIT_REPO_URI="git://github.com/Tox/toxic
+                           https://github.com/Tox/toxic"
+EGIT_COMMIT="3907edcdda5d66958a05083557cf102c8f37353f"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
@@ -23,6 +24,7 @@ RDEPEND="net-libs/tox
 DEPEND="${RDEPEND}
 	dev-libs/libconfig
 	sys-devel/automake
+	virtual/pkgconfig
 	sys-devel/libtool"
 
 src_prepare() {
