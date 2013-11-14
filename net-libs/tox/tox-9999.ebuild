@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/irungentoo/ProjectTox-Core"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND="virtual/ffmpeg
