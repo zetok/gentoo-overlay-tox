@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://github.com/Tox/toxic
 EGIT_COMMIT="3907edcdda5d66958a05083557cf102c8f37353f"
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS=""
 IUSE=""
 
 RDEPEND="net-libs/tox
