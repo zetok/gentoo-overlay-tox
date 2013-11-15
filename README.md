@@ -6,7 +6,3 @@ Just run:
     emerge --sync
 
 *Note: See [AUTHORS] (https://github.com/fr0stycl34r/gentoo-overlay-tox/blob/master/AUTHORS) for people who created these Ebuilds.*
-***
-WARNING:
-The QT GUI Ebuild is broken. I will be working on fixing it later. Any contributions are always welcome.
-***
