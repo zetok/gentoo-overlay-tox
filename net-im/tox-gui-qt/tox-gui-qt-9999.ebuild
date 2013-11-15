@@ -2,34 +2,33 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="5"
+EAPI=5
 
-EGIT_REPO_URI="https://github.com/nurupo/ProjectTox-Qt-GUI"
+inherit eutils git-2
 
-inherit cmake-utils git-2
+DESCRIPTION="Tox GUI"
+HOMEPAGE="https://github.com/nurupo/ProjectTox-Qt-GUI"
 
-DESCRIPTION="A front end for ProjectTox Core written in Qt5 and C++."
-HOMEPAGE="http://tox.im"
-
-LICENSE="GPL-3+"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND="
-	net-libs/tox
-	dev-qt/qtcore:5
-	dev-qt/qtdeclarative:5
-	dev-qt/qtwidgets:5
-"
-DEPEND="${RDEPEND}"
+#EGIT_STORE_DIR="${DISTDIR}/egit-src"
+EGIT_REPO_URI="git://github.com/nurupo/ProjectTox-Qt-GUI.git"
+EGIT_HAS_SUBMODULES=1
 
-src_prepare() {
-	:
+DEPEND="dev-qt/qtcore:5
+dev-qt/qtgui:5
+dev-qt/qtwidgets:5
+dev-libs/libsodium"
+
+RDEPEND="${DEPEND}"
+
+src_configure() {
+	/usr/lib64/qt5/bin/qmake "${S}"/projectfiles/QtCreator/TOX-Qt-GUI.pro
 }
 
-pkg_postinst() {
-        elog "DHT node list is available via 
-https://gist.github.com/Proplex/6124860"
-        elog "or in #tox @ irc.freenode.org"
+src_install() {
+	dobin "${S}/TOX-Qt-GUI" || die "TOX-Qt-GUI not found!"
 }
