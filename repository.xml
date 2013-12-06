@@ -7,7 +7,7 @@
     <homepage>https://github.com/fr0stycl34r/gentoo-overlay-tox</homepage>
     <owner type="person">
 		<email>an0n102968@riseup.net</email>
-		<name>cl34r</name>
+		<name>urras</name>
     </owner>
     <source type="git">git://github.com/fr0stycl34r/gentoo-overlay-tox.git</source>
     <feed>https://github.com/fr0stycl34r/gentoo-overlay-tox/commits/master.atom</feed>
