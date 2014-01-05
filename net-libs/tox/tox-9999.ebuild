@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND="media-video/ffmpeg
+RDEPEND="virtual-video/ffmpeg
 	dev-libs/libsodium
         dev-libs/check
         dev-libs/libconfig
