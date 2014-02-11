@@ -13,12 +13,13 @@ EGIT_REPO_URI="https://github.com/irungentoo/ProjectTox-Core"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="+av"
 
-RDEPEND="virtual/ffmpeg
-	dev-libs/libsodium
+RDEPEND="dev-libs/libsodium
         dev-libs/check
         dev-libs/libconfig
+		media-libs/libvpx
+		media-libs/opus
         sys-libs/ncurses"
 
 DEPEND="${RDEPEND}
@@ -30,18 +31,9 @@ src_prepare() {
         eautoreconf
 }
 
-#src_compile() {
-#        use sodium && cmake -DUSE_NACL=OFF || cmake -DUSE_NACL=ON
-#        emake
-#}
-
-#src_install() {
-#        dobin "${WORKDIR}"/${P}/testing/nTox
-#        dobin "${WORKDIR}"/${P}/testing/toxic/toxic
-#        insinto /usr/share/${PN}
-#        doins "${WORKDIR}"/${P}/other/DHTservers
-#        dolib "${WORKDIR}"/${P}/core/libtoxcore.so
-#}
+src_configure() {
+		$(usex av "" "--disable-av")
+}
 
 pkg_postinst() {
         elog ""
