@@ -10,7 +10,6 @@ DESCRIPTION="Encrypted, decentralized messenging platform"
 HOMEPAGE="http://wiki.tox.im/Toxic"
 EGIT_REPO_URI="git://github.com/Tox/toxic
                            https://github.com/Tox/toxic"
-EGIT_COMMIT="3907edcdda5d66958a05083557cf102c8f37353f"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=" ~amd64 ~x86"
