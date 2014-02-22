@@ -3,7 +3,7 @@
 <repositories xmlns="" version="1.0">
   <repo quality="experimental" status="unofficial">
     <name>tox-overlay</name>
-    <description lang="en">Ebuilds for Tox and Toxic. Both Ebuilds were taken from https://suigintou.weedy.ca/trac/gentoo-overlay/</description>
+    <description lang="en">Ebuilds for Tox (core lib) and Instant messagers based on Tox.</description>
     <homepage>https://github.com/fr0stycl34r/gentoo-overlay-tox</homepage>
     <owner type="person">
 		<email>an0n102968@riseup.net</email>
