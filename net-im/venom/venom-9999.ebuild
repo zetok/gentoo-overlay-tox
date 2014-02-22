@@ -17,9 +17,9 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND="dev-libs/libgee:0.8
-		dev-libs/json-glib
+DEPEND="dev-libs/json-glib
 		net-libs/tox
+		dev-db/sqlite
 		x11-libs/gtk+:3
 		$(vala_depend)"
 RDEPEND="${DEPEND}"
