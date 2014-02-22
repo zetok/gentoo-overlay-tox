@@ -18,8 +18,8 @@ KEYWORDS=""
 IUSE=""
 
 DEPEND="dev-libs/json-glib
-		net-libs/tox
 		dev-db/sqlite
+		net-libs/tox
 		x11-libs/gtk+:3
 		$(vala_depend)"
 RDEPEND="${DEPEND}"
