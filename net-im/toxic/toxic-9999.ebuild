@@ -9,27 +9,33 @@ inherit autotools eutils git-2
 DESCRIPTION="Encrypted, decentralized messenging platform"
 HOMEPAGE="http://wiki.tox.im/Toxic"
 EGIT_REPO_URI="git://github.com/Tox/toxic 
-                https://github.com/Tox/toxic"
+				https://github.com/Tox/toxic"
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS=" ~amd64 ~x86"
-IUSE=""
+KEYWORDS="~amd64 ~x86"
+IUSE="+av"
 
 RDEPEND="net-libs/tox
-        dev-libs/check
-        dev-libs/libconfig
-        sys-libs/ncurses"
+		dev-libs/check
+		dev-libs/libconfig
+		av? ( net-libs/tox[av] )
+		sys-libs/ncurses"
 
 DEPEND="${RDEPEND}
-        dev-libs/libconfig
-        sys-devel/automake
-        virtual/pkgconfig
-        sys-devel/libtool"
+		dev-libs/libconfig
+		sys-devel/automake
+		virtual/pkgconfig
+		sys-devel/libtool"
 
 src_prepare() {
-        eautoreconf
+		eautoreconf
+}
+
+src_prepare() {
+		eautoreconf
+		$(use_enable av)
 }
 
 pkg_postinst() {
-        elog "DHT node list is available in /usr/share/${PN}/DHTservers"
+		elog "DHT node list is available in /usr/share/${PN}/DHTservers"
 }
