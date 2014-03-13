@@ -16,27 +16,22 @@ KEYWORDS=""
 IUSE="+av"
 
 RDEPEND="dev-libs/libsodium
-        dev-libs/check
-        dev-libs/libconfig
+		dev-libs/check
+		dev-libs/libconfig
 		media-libs/libvpx
 		media-libs/opus
-        sys-libs/ncurses"
+		sys-libs/ncurses"
 
 DEPEND="${RDEPEND}
-        dev-libs/libconfig
-        sys-devel/automake
-        sys-devel/libtool"
+		dev-libs/libconfig
+		sys-devel/automake
+		sys-devel/libtool"
 
 src_prepare() {
-        eautoreconf
-		$(usex av "" "--disable-av")
-
+		eautoreconf
+		$(use_enable av)
 }
 
 src_compile() {
 		emake
 }
-
-#pkg_postinst() {
-#        elog ""
-#}
