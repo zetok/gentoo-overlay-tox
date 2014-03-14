@@ -18,8 +18,8 @@ IUSE="+av"
 RDEPEND="dev-libs/libsodium
 		dev-libs/check
 		dev-libs/libconfig
-		media-libs/libvpx
-		media-libs/opus
+		av? ( media-libs/libvpx
+		      media-libs/opus )
 		sys-libs/ncurses"
 
 DEPEND="${RDEPEND}
