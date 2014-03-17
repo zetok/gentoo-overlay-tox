@@ -6,6 +6,6 @@
 		<name>holgersson</name>
 	</maintainer>
 	<use>
-		<flag name="AV">Adds support for audio and video. Default is on.</flag>
+		<flag name="av">Adds support for audio and video.</flag>
 	</use>
 </pkgmetadata>
