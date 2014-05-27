@@ -8,7 +8,7 @@
 # https://github.com/msva and http://git.rout0r.org/~whitekiba >>> net-im/tox-gui
 # https://suigintou.weedy.ca/trac/gentoo-overlay               >>> net-libs/tox + net-im/toxic
 # https://github.com/hasufell                                  >>> net-im/tox-prpl
-# http://git.overlays.gentoo.org/gitweb/?p=user/emery.git      >>> net-libs/tox + net-im/toxic + net/im/venom
+# http://git.overlays.gentoo.org/gitweb/?p=user/emery.git      >>> net-libs/tox + net-im/toxic + net-im/venom
 # https://github.com/grepwood                                  >>> README.md [bugfix]
 
 
