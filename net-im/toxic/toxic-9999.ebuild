@@ -17,7 +17,7 @@ IUSE="+av"
 RDEPEND="net-libs/tox
 		dev-libs/check
 		dev-libs/libconfig
-		av? ( net-libs/tox[av] )
+		av? ( net-libs/tox[av] media-libs/openal )
 		sys-libs/ncurses"
 
 DEPEND="${RDEPEND}
