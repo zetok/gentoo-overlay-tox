@@ -29,12 +29,12 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 		eautoreconf
-		$(use_enable av)
 }
 
 src_configure() {
 		econf \
-		$(use_enable logging )
+			$(use_enable av) \
+			$(use_enable logging )
 }
 
 src_compile() {
