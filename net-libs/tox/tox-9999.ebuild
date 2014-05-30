@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header$
 
@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/irungentoo/ProjectTox-Core"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE="+av"
+IUSE="+av logging"
 
 RDEPEND="dev-libs/libsodium
 		dev-libs/check
@@ -30,6 +30,11 @@ DEPEND="${RDEPEND}
 src_prepare() {
 		eautoreconf
 		$(use_enable av)
+}
+
+src_configure() {
+		econf \
+		$(use_enable logging )
 }
 
 src_compile() {
