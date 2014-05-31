@@ -14,6 +14,7 @@ LICENSE="GPL-3"
 SLOT="0"
 
 RDEPEND="net-libs/tox
+		>=dev-db/sqlite-3.8.2
 		dev-scheme/racket"
 
 src_prepare() {
