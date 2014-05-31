@@ -6,7 +6,7 @@ EAPI=5
 
 inherit eutils git-2
 
-DESCRIPTION="Tox GUI"
+DESCRIPTION="Tox QT GUI"
 HOMEPAGE="https://github.com/nurupo/ProjectTox-Qt-GUI"
 
 LICENSE="GPL-3"

@@ -6,7 +6,7 @@ EAPI=5
 
 inherit autotools eutils git-2
 
-DESCRIPTION="Encrypted, decentralized messenging platform"
+DESCRIPTION="CLI Frontend for Tox"
 HOMEPAGE="http://wiki.tox.im/Toxic"
 EGIT_REPO_URI="git://github.com/Tox/toxic 
 				https://github.com/Tox/toxic"
