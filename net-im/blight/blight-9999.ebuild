@@ -18,7 +18,7 @@ RDEPEND="net-libs/tox
 		dev-scheme/racket"
 
 src_prepare() {
-		raco pkg install --no-deps github://github.com/lehitoskin/libtoxcore-racket/racket5.3
+		raco pkg install --no-setup github://github.com/lehitoskin/libtoxcore-racket/racket5.3
 		epatch "$FILESDIR/${P}.patch"
 }
 
