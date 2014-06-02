@@ -5,6 +5,7 @@
 # 1. Contributors, original repositories and overlays
 #------------------------------------------------------
 
+# https://github.com/lehitoskin/blight                         >>> net-im/blight
 # https://github.com/msva and http://git.rout0r.org/~whitekiba >>> net-im/tox-gui
 # https://suigintou.weedy.ca/trac/gentoo-overlay               >>> net-libs/tox + net-im/toxic
 # https://github.com/hasufell                                  >>> net-im/tox-prpl
