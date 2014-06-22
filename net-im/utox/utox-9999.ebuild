@@ -16,5 +16,6 @@ x11-libs/libX11
 media-libs/openal"
 
 src_install() {
-    emake
+    emake DESTDIR=${D}/usr install
 }
+
