@@ -13,7 +13,9 @@ https://github.com/notsecure/uTox.git" LICENSE="GPL-3" SLOT="0"
 
 RDEPEND="net-libs/tox
 x11-libs/libX11
-media-libs/openal"
+media-libs/openal
+media-libs/libv4l
+media-libs/libvpx"
 
 src_install() {
     emake DESTDIR=${D}/usr install
