@@ -32,7 +32,8 @@ src_prepare() {
 }
 src_install() {
 		cd "${S}/build"
-                emake DESTDIR=${D}/usr/local/bin
+		make
+                emake install DESTDIR=${D}/usr
 }
 pkg_postinst() {
 		elog "DHT node list is available in /usr/share/${PN}/DHTservers"
