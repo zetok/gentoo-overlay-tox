@@ -22,7 +22,6 @@ RDEPEND="net-libs/tox
 
 DEPEND="${RDEPEND}
 		dev-libs/libconfig
-		sys-devel/automake
 		virtual/pkgconfig
 		sys-devel/libtool"
 
@@ -30,14 +29,11 @@ src_prepare() {
 		if use unixtime; then
 			epatch "${WORKDIR}/fun/unixtime.patch" || die "Epatch failed!"
 		fi
-		eautoreconf
 }
-
-src_prepare() {
-		eautoreconf
-		$(use_enable av)
+src_install() {
+		cd "${S}/build"
+                emake DESTDIR=${D}/usr/local/bin
 }
-
 pkg_postinst() {
 		elog "DHT node list is available in /usr/share/${PN}/DHTservers"
 }
