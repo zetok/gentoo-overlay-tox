@@ -1,13 +1,5 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/ws4py/ws4py-9999.ebuild,v 1.4 2012/07/17 02:11:37 vapier Exp $
-
-# The gevent package isn't in the tree yet, so we delete
-# those implementations.
-#
-# We could depend on dev-python/cherrypy when USE=server, but
-# that is an optional component ...
-# Same for www-servers/tornado and USE=client ...
 
 EAPI="4"
 PYTHON_COMPAT=( python{2_6,2_7,3_3} )
