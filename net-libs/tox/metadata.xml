@@ -8,5 +8,6 @@
 	<use>
 		<flag name="av">Adds support for audio and video.</flag>
 		<flag name="logging">Enables logging, useful for debugging.</flag>
+		<flag name="nacl">Use NaCl instead of libsodium.</flag>
 	</use>
 </pkgmetadata>

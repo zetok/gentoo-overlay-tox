@@ -13,9 +13,10 @@ EGIT_REPO_URI="https://github.com/irungentoo/ProjectTox-Core"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE="+av logging"
+IUSE="+av logging nacl"
 
-RDEPEND="dev-libs/libsodium
+RDEPEND="!nacl? ( dev-libs/libsodium )
+		nacl? ( net-libs/nacl )
 		dev-libs/check
 		dev-libs/libconfig
 		av? ( media-libs/libvpx
@@ -28,13 +29,21 @@ DEPEND="${RDEPEND}
 		sys-devel/libtool"
 
 src_prepare() {
+		# needed, since it doesn't want to work without
+		if use nacl; then
+			sed -i -e "s,NACL_SEARCH_HEADERS=,NACL_SEARCH_HEADERS=/usr/include/nacl," "${S}/configure.ac" || \
+			die "Couldn't set NACL_SEARCH_HEADERS"
+			sed -i -e "s,NACL_SEARCH_LIBS=,NACL_SEARCH_LIBS=/usr/lib/nacl," "${S}/configure.ac" || \
+			die "Couldn't set NACL_SEARCH_LIBS"
+		fi
 		eautoreconf
 }
 
 src_configure() {
 		econf \
 			$(use_enable av) \
-			$(use_enable logging )
+			$(use_enable logging ) \
+			$(use_enable nacl )
 }
 
 src_compile() {
