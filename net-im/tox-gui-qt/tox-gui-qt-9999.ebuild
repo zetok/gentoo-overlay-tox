@@ -21,7 +21,7 @@ EGIT_HAS_SUBMODULES=1
 DEPEND="dev-qt/qtcore:5
 dev-qt/qtgui:5
 dev-qt/qtwidgets:5
-dev-libs/libsodium"
+net-libs/tox"
 
 RDEPEND="${DEPEND}"
 
