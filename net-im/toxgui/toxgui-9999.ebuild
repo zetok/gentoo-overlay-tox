@@ -16,18 +16,23 @@ IUSE=""
 
 EGIT_REPO_URI="git://github.com/tux3/toxgui.git"
 
-DEPEND="dev-qt/qtcore:5
-dev-qt/qtgui:5
-dev-qt/qtmultimedia:5
-dev-qt/qtconcurrent:5
-net-libs/tox"
+DEPEND="
+	dev-qt/qtcore:5
+	dev-qt/qtgui:5
+	dev-qt/qtmultimedia:5
+	dev-qt/qtconcurrent:5
+	net-libs/tox[av]"
 
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${DEPEND}
+	media-plugins/gst-plugins-meta:0.10[opus,vpx,v4l]"
 
 src_configure() {
-/usr/lib64/qt5/bin/qmake
+	/usr/lib64/qt5/bin/qmake
 }
 
 src_install() {
 	dobin "${S}/toxgui" || die "ToxGUI not found!"
+	doicon -s scalable "${FILESDIR}"/tox.svg
+	make_desktop_entry "toxgui" "ToxGui" "/usr/share/icons/hicolor/scalable/apps/tox.svg" "Network"
 }
