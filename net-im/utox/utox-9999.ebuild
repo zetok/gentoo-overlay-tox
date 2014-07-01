@@ -9,7 +9,9 @@ inherit git-2
 DESCRIPTION="Lightweight Tox client"
 HOMEPAGE="https://github.com/notsecure/uTox.git"
 EGIT_REPO_URI="git://github.com/notsecure/uTox.git
-https://github.com/notsecure/uTox.git" LICENSE="GPL-3" SLOT="0"
+				https://github.com/notsecure/uTox.git" 
+LICENSE="GPL-3" 
+SLOT="0"
 
 RDEPEND="net-libs/tox
 x11-libs/libX11
