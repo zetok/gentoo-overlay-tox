@@ -9,32 +9,34 @@ inherit autotools eutils git-2
 DESCRIPTION="CLI Frontend for Tox"
 HOMEPAGE="http://wiki.tox.im/Toxic"
 EGIT_REPO_URI="git://github.com/Tox/toxic
-				https://github.com/Tox/toxic"
+                                https://github.com/Tox/toxic"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE="+av unixtime"
 
 RDEPEND="net-libs/tox
-		dev-libs/check
-		dev-libs/libconfig
-		av? ( net-libs/tox[av] media-libs/openal )
-		sys-libs/ncurses"
+                dev-libs/check
+                dev-libs/libconfig
+                net-libs/tox
+                 media-libs/openal
+                sys-libs/ncurses"
 
 DEPEND="${RDEPEND}
-		dev-libs/libconfig
-		virtual/pkgconfig
-		sys-devel/libtool"
+                dev-libs/libconfig
+                virtual/pkgconfig
+                sys-devel/libtool"
 
 src_prepare() {
-		if use unixtime; then
-			epatch "${WORKDIR}/fun/unixtime.patch" || die "Epatch failed!"
-		fi
+                if use unixtime; then
+                        epatch "${WORKDIR}/fun/unixtime.patch" || die "Epatch failed!"
+                fi
 }
 src_install() {
-		cd "${S}/build"
-		make PREFIX="/usr"
-		emake install PREFIX="/usr" DESTDIR="${D}"
+                cd "${S}/build"
+                make PREFIX="/usr"
+                emake install PREFIX="/usr" DESTDIR="${D}"
 }
 pkg_postinst() {
-		elog "DHT node list is available in /usr/share/${PN}/DHTnodes"
+                elog "DHT node list is available in /usr/share/${PN}/DHTnodes"
 }
+
