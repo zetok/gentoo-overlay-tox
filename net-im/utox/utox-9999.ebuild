@@ -9,8 +9,8 @@ inherit git-2
 DESCRIPTION="Lightweight Tox client"
 HOMEPAGE="https://github.com/notsecure/uTox.git"
 EGIT_REPO_URI="git://github.com/notsecure/uTox.git
-				https://github.com/notsecure/uTox.git" 
-LICENSE="GPL-3" 
+				https://github.com/notsecure/uTox.git"
+LICENSE="GPL-3"
 SLOT="0"
 
 RDEPEND="net-libs/tox
@@ -20,6 +20,5 @@ media-libs/libv4l
 media-libs/libvpx"
 
 src_install() {
-    emake DESTDIR=${D}/usr install
+	emake DESTDIR="${D}/usr" install
 }
-

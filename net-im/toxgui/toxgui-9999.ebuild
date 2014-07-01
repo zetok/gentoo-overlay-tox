@@ -25,7 +25,7 @@ net-libs/tox"
 RDEPEND="${DEPEND}"
 
 src_configure() {
-    /usr/lib64/qt5/bin/qmake
+/usr/lib64/qt5/bin/qmake
 }
 
 src_install() {

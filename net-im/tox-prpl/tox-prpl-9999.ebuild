@@ -36,4 +36,3 @@ src_install() {
 	default
 	prune_libtool_files --all
 }
-

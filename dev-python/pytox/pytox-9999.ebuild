@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="4"
-PYTHON_COMPAT=( python{2_6,2_7,3_3} )
+PYTHON_COMPAT=( python{2_7,3_3} )
 
-inherit distutils eutils
+inherit distutils-r1 eutils
 
 if [[ ${PV} == "9999" ]] ; then
 	inherit git-2
