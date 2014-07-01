@@ -1,51 +1,44 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header$
+# $Header: $
 
 EAPI=5
 
-inherit autotools eutils git-2
+inherit git-2 autotools-utils
 
 DESCRIPTION="Encrypted, P2P, messenging, audio and video calling platform"
 HOMEPAGE="https://tox.im"
 EGIT_REPO_URI="https://github.com/irungentoo/ProjectTox-Core"
+AUTOTOOLS_AUTORECONF="1"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE="+av logging nacl"
+IUSE="+av logging ntox daemon"
 
-RDEPEND="!nacl? ( dev-libs/libsodium )
-		nacl? ( net-libs/nacl )
-		dev-libs/check
-		dev-libs/libconfig
-		av? ( media-libs/libvpx
-		      media-libs/opus )
-		sys-libs/ncurses"
+RDEPEND="
+	dev-libs/libsodium
+	daemon? ( dev-libs/libconfig )
+	av? ( media-libs/libvpx
+	      media-libs/opus )
+	ntox? ( sys-libs/ncurses )"
 
-DEPEND="${RDEPEND}
-		dev-libs/libconfig
-		sys-devel/automake
-		sys-devel/libtool"
-
-src_prepare() {
-		# needed, since it doesn't want to work without
-		if use nacl; then
-			sed -i -e "s,NACL_SEARCH_HEADERS=,NACL_SEARCH_HEADERS=/usr/include/nacl," "${S}/configure.ac" || \
-			die "Couldn't set NACL_SEARCH_HEADERS"
-			sed -i -e "s,NACL_SEARCH_LIBS=,NACL_SEARCH_LIBS=/usr/lib/nacl," "${S}/configure.ac" || \
-			die "Couldn't set NACL_SEARCH_LIBS"
-		fi
-		eautoreconf
-}
+DEPEND="${RDEPEND}"
 
 src_configure() {
-		econf \
-			$(use_enable av) \
-			$(use_enable logging ) \
-			$(use_enable nacl )
+	local myeconfargs=(
+		$(use_enable av)
+		$(use_enable logging)
+		$(use_enable ntox)
+		$(use_enable daemon)
+		--disable-tests
+		--disable-testing
+	)
+	autotools-utils_src_configure
 }
 
-src_compile() {
-		emake
+src_install() {
+	autotools-utils_src_install
+
+	use daemon && newinitd "${FILESDIR}"/initd tox-dht-daemon
 }

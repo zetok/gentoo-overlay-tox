@@ -8,6 +8,7 @@
 	<use>
 		<flag name="av">Adds support for audio and video.</flag>
 		<flag name="logging">Enables logging, useful for debugging.</flag>
-		<flag name="nacl">Use NaCl instead of libsodium.</flag>
+		<flag name="ntox">Enable the testing nTox client.</flag>
+		<flag name="daemon">Enable the DHT Bootstrap Daemon</flag>
 	</use>
 </pkgmetadata>
