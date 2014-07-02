@@ -1,3 +1,0 @@
-# Masked due to build errors.
-#  -> seems to be something with FEATURES and that fetch in src_prepare()
-=net-im/blight-9999
