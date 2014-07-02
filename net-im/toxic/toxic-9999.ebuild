@@ -12,13 +12,13 @@ EGIT_REPO_URI="git://github.com/Tox/toxic
                                 https://github.com/Tox/toxic"
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="+av unixtime"
+IUSE="unixtime"
 
 RDEPEND="net-libs/tox
                 dev-libs/check
                 dev-libs/libconfig
                 net-libs/tox
-                 media-libs/openal
+                media-libs/openal
                 sys-libs/ncurses"
 
 DEPEND="${RDEPEND}
