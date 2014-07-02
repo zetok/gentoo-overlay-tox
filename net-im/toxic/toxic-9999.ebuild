@@ -12,7 +12,7 @@ EGIT_REPO_URI="git://github.com/Tox/toxic
                                 https://github.com/Tox/toxic"
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="unixtime"
+IUSE=""
 
 RDEPEND="net-libs/tox
                 dev-libs/check
@@ -26,11 +26,6 @@ DEPEND="${RDEPEND}
                 virtual/pkgconfig
                 sys-devel/libtool"
 
-src_prepare() {
-                if use unixtime; then
-                        epatch "${WORKDIR}/fun/unixtime.patch" || die "Epatch failed!"
-                fi
-}
 src_install() {
                 cd "${S}/build"
                 make PREFIX="/usr"
