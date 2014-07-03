@@ -1,0 +1,4 @@
+# Masked venom due to broken vala packages in the portage tree
+#  -> You can create the missing symlink (/usr/bin/valac -> /usr/bin/valac-YOUR_VERSION) by hand
+# and safely unmask venom
+=net-im/venom-9999
