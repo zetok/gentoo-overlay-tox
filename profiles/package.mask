@@ -1,0 +1,10 @@
+# holgersson <holgersson@posteo.de> (2 Jun 2014)
+# Masked blight due to build errors.
+#  -> seems to be something with FEATURES and that fetch in src_prepare()
+=net-im/blight-9999
+
+# holgersson <holgersson@posteo.de> (1 Jul 2014)
+# Masked venom due to broken vala packages in the portage tree
+#  -> You can create the missing symlink (/usr/bin/valac -> /usr/bin/valac-YOUR_VERSION)
+# by hand and safely unmask venom.
+=net-im/venom-9999
