@@ -15,10 +15,10 @@ SLOT="0"
 
 RDEPEND="net-libs/tox
 		>=dev-db/sqlite-3.8.2
-		dev-scheme/racket[X]"
+		>=dev-scheme/racket-6.0.1[X]"
 
 src_prepare() {
-		raco pkg install --no-setup github://github.com/lehitoskin/libtoxcore-racket/racket5.3
+		raco pkg install --no-setup github://github.com/lehitoskin/libtoxcore-racket/master
 		epatch "$FILESDIR/${P}.patch"
 }
 
