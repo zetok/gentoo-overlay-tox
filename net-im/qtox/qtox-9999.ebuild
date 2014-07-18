@@ -6,15 +6,15 @@ EAPI=5
 
 inherit eutils git-2
 
-DESCRIPTION="ToxGUI"
-HOMEPAGE="https://github.com/tux3/toxgui"
+DESCRIPTION="qTox"
+HOMEPAGE="https://github.com/tux3/qtox"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-EGIT_REPO_URI="git://github.com/tux3/toxgui.git"
+EGIT_REPO_URI="git://github.com/tux3/qtox.git"
 
 DEPEND="
 	dev-qt/qtcore:5
@@ -32,7 +32,7 @@ src_configure() {
 }
 
 src_install() {
-	dobin "${S}/toxgui" || die "ToxGUI not found!"
+	dobin "${S}/qtox" || die "qTox not found!"
 	doicon -s scalable "${FILESDIR}"/tox.svg
-	make_desktop_entry "toxgui" "ToxGui" "/usr/share/icons/hicolor/scalable/apps/tox.svg" "Network"
+	make_desktop_entry "qtox" "qTox" "/usr/share/icons/hicolor/scalable/apps/tox.svg" "Network"
 }
