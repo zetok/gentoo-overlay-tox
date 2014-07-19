@@ -8,7 +8,7 @@ inherit git-2 autotools-utils
 
 DESCRIPTION="Encrypted, P2P, messenging, audio and video calling platform"
 HOMEPAGE="https://tox.im"
-EGIT_REPO_URI="https://github.com/irungentoo/ProjectTox-Core"
+EGIT_REPO_URI="https://github.com/irungentoo/toxcore"
 AUTOTOOLS_AUTORECONF="1"
 
 LICENSE="GPL-3"
