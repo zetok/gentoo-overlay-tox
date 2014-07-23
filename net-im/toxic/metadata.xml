@@ -6,7 +6,6 @@
 		<name>holgersson</name>
 	</maintainer>
 	<use>
-		<flag name="av">Adds support for audio and video.</flag>
-		<flag name="unixtime">Instead of standard time display Unix time.</flag>
+		<flag name="sound-notify">Adds support for sound notifications.</flag>
 	</use>
 </pkgmetadata>
