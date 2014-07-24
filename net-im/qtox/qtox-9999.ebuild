@@ -28,7 +28,13 @@ RDEPEND="
 	media-plugins/gst-plugins-meta:0.10[opus,vpx,v4l]"
 
 src_configure() {
-	/usr/lib64/qt5/bin/qmake
+	if use x86; then
+		/usr/lib/qt5/bin/qmake
+	elif use amd64; then
+		/usr/lib64/qt5/bin/qmake
+	else
+		die "Not supported arch"
+	fi
 }
 
 src_install() {
