@@ -12,20 +12,26 @@ EGIT_REPO_URI="git://github.com/Tox/toxic
                                 https://github.com/Tox/toxic"
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="+sound-notify"
+IUSE="+libnotify +sound-notify"
 
-RDEPEND="net-libs/tox
+RDEPEND="
 		dev-libs/check
 		dev-libs/libconfig
 		net-libs/tox
 		media-libs/openal
 		sys-libs/ncurses
+		libnotify? ( x11-libs/libnotify )
 		sound-notify? ( media-libs/freealut )"
 
 DEPEND="${RDEPEND}
 		dev-libs/libconfig
 		virtual/pkgconfig
 		sys-devel/libtool"
+
+src_prepare() {
+		use libnotify || epatch "${FILESDIR}/disable-libnotify.patch"
+		use sound-notify || epatch "${FILESDIR}/disable-sound-notify.patch"
+}
 
 src_install() {
 		cd "${S}/build"
