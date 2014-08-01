@@ -22,6 +22,7 @@ DEPEND="
 	dev-qt/qtmultimedia:5
 	dev-qt/qtconcurrent:5
 	dev-qt/qtxml:5
+	dev-qt/qtopengl:5
 	net-libs/tox[av]"
 
 RDEPEND="
