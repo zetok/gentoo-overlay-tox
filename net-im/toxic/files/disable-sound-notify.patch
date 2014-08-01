@@ -1,0 +1,11 @@
+--- a/cfg/check_features.mk
++++ b/cfg/check_features.mk
+@@ -12,7 +12,7 @@ ifneq ($(AUDIO), disabled)
+ endif
+ 
+ # Check if we want build sound notifications support
+-SND_NOTIFY = $(shell if [ -z "$(DISABLE_SOUND_NOTIFY)" ] || [ "$(DISABLE_SOUND_NOTIFY)" = "0" ] ; then echo enabled ; else echo disabled ; fi)
++SND_NOTIFY = $(shell if [ -z "$(DISABLE_SOUND_NOTIFY)" ] || [ "$(DISABLE_SOUND_NOTIFY)" = "0" ] ; then echo disabled ; fi)
+ ifneq ($(SND_NOTIFY), disabled)
+ 	-include $(CFG_DIR)/sound_notifications.mk
+ endif
