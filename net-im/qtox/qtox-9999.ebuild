@@ -19,7 +19,7 @@ EGIT_REPO_URI="git://github.com/tux3/qtox.git"
 DEPEND="
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5
-	dev-qt/qtmultimedia:5
+	dev-qt/qtmultimedia:5[widgets]
 	dev-qt/qtconcurrent:5
 	dev-qt/qtxml:5
 	dev-qt/qtopengl:5
