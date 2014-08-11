@@ -12,8 +12,7 @@ HOMEPAGE="https://github.com/tux3/qtox"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE=" pulseaudio alsa"
-REQUIRED_USE="?? ( alsa pulseaudio )"
+IUSE="pulseaudio"
 
 EGIT_REPO_URI="git://github.com/tux3/qtox.git"
 
@@ -24,7 +23,7 @@ DEPEND="
         pulseaudio? ( 
                 dev-qt/qtmultimedia:5[-alsa,pulseaudio,widgets]
 )
-        alsa? ( 
+        !pulseaudio? ( 
                 dev-qt/qtmultimedia:5[alsa,-pulseaudio,widgets]
 )
         dev-qt/qtconcurrent:5
