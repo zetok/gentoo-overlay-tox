@@ -47,7 +47,7 @@ src_configure() {
 }
 
 src_install() {
-        dobin "${S}/qtox" || die "qTox not found!"
+        dobin "${S}/qtox" || die "If you get an error that has something to do with "QListWidgetItem::QListWidgetItem", update GCC to 4.8.3 and run gcc-config."
         doicon -s scalable "${FILESDIR}"/tox.svg
         make_desktop_entry "qtox" "qTox" "/usr/share/icons/hicolor/scalable/apps/tox.svg" "Network"
 }
