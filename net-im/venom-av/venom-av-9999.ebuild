@@ -20,6 +20,7 @@ IUSE="+libnotify qrcode"
 DEPEND="dev-libs/json-glib
 		dev-db/sqlite
 		net-libs/tox
+		media-libs/gstreamer
 		>=x11-libs/gtk+-3.4:3
 		$(vala_depend)
 		libnotify? ( x11-libs/libnotify )
@@ -34,4 +35,3 @@ src_configure() {
 
 		cmake-utils_src_configure
 }
-
