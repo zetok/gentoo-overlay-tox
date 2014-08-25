@@ -28,16 +28,18 @@ DEPEND="${RDEPEND}
 		virtual/pkgconfig
 		sys-devel/libtool"
 
-src_prepare() {
-		use libnotify || epatch "${FILESDIR}/disable-libnotify.patch"
-		use sound-notify || epatch "${FILESDIR}/disable-sound-notify.patch"
+src_compile() {
+		use libnotify || export NOTIFY="DISABLE_DESKTOP_NOTIFY=1"
+		use sound-notify || export SOUND_NOTIFY="DISABLE_SOUND_NOTIFY=1"
+		cd "${S}/build"
+		emake PREFIX="/usr" $NOTIFY $SOUND_NOTIFY
 }
 
 src_install() {
 		cd "${S}/build"
-		make PREFIX="/usr"
 		emake install PREFIX="/usr" DESTDIR="${D}"
 }
+
 pkg_postinst() {
 		elog "DHT node list is available in /usr/share/${PN}/DHTnodes"
 }
