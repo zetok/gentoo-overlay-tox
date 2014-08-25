@@ -6,7 +6,7 @@
     <description lang="en">Gentoo overlay for Toxcore, Tox clients, and Tox related projects.</description>
     <homepage>https://github.com/fr0stycl34r/gentoo-overlay-tox</homepage>
     <owner type="person">
-		<email>urras.hovaker@gmail.com</email>
+		<email>urras@tox.im</email>
 		<name>urras</name>
     </owner>
     <source type="git">git://github.com/fr0stycl34r/gentoo-overlay-tox.git</source>
