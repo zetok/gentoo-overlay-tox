@@ -1,3 +1,7 @@
+To add this overlay from layman, run:
+
+```sudo layman -a tox-overlay```
+
 To add this overlay manually, run:
 
 ```
