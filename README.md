@@ -1,5 +1,5 @@
-Just run:
-    
+To add this overlay, run:
+
 ```
   sudo su
   layman -f -o https://raw.github.com/urras/gentoo-overlay-tox/master/repository.xml -a tox-overlay

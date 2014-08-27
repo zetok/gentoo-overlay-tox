@@ -25,6 +25,7 @@ RDEPEND="
 	libnotify? ( x11-libs/libnotify )
 	sound-notify? ( media-libs/freealut )"
 DEPEND="${RDEPEND}
+	app-text/asciidoc
 	virtual/pkgconfig"
 
 src_prepare() {
