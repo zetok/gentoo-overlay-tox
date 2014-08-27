@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit eutils git-2
+inherit eutils qmake-utils git-2
 
 DESCRIPTION="Tox QT GUI"
 HOMEPAGE="https://github.com/nurupo/ProjectTox-Qt-GUI"
@@ -19,16 +19,15 @@ EGIT_REPO_URI="git://github.com/nurupo/ProjectTox-Qt-GUI.git"
 EGIT_HAS_SUBMODULES=1
 
 DEPEND="dev-qt/qtcore:5
-dev-qt/qtgui:5
-dev-qt/qtwidgets:5
-net-libs/tox"
-
+	dev-qt/qtgui:5
+	dev-qt/qtwidgets:5
+	net-libs/tox"
 RDEPEND="${DEPEND}"
 
 src_configure() {
-	/usr/lib64/qt5/bin/qmake "${S}"/projectfiles/QtCreator/TOX-Qt-GUI.pro
+	eqmake5 projectfiles/QtCreator/TOX-Qt-GUI.pro
 }
 
 src_install() {
-	dobin "${S}/TOX-Qt-GUI" || die "TOX-Qt-GUI not found!"
+	dobin "${S}/TOX-Qt-GUI"
 }
