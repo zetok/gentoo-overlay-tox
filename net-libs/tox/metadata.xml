@@ -13,13 +13,13 @@
 			needs logging enabled)
 		</flag>
 		<flag name="log-debug">Set log level to DEBUG (only choose one log-*,
-			needs logging enabled))
+			needs logging enabled)
 		</flag>
 		<flag name="log-warn">Set log level to WARNING (only choose one log-*,
-			needs logging enabled))
+			needs logging enabled)
 		</flag>
 		<flag name="log-error">Set log level to ERROR (only choose one log-*,
-			needs logging enabled))
+			needs logging enabled)
 		</flag>
 		<flag name="ntox">Enable the testing nTox client.</flag>
 		<flag name="daemon">Enable the DHT Bootstrap Daemon</flag>
