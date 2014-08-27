@@ -4,51 +4,52 @@
 
 EAPI=5
 
-inherit eutils git-2
+inherit eutils qmake-utils git-2
 
 DESCRIPTION="qTox"
 HOMEPAGE="https://github.com/tux3/qtox"
+SRC_URI=""
+EGIT_REPO_URI="git://github.com/tux3/qtox.git"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE="pulseaudio"
-
-EGIT_REPO_URI="git://github.com/tux3/qtox.git"
+IUSE=""
 
 DEPEND="
-        >=sys-devel/gcc-4.8.0
-        dev-qt/qtcore:5
-        dev-qt/qtgui:5
-        pulseaudio? ( 
-                dev-qt/qtmultimedia:5[-alsa,pulseaudio,widgets]
-)
-        !pulseaudio? ( 
-                dev-qt/qtmultimedia:5[alsa,-pulseaudio,widgets]
-)
-        dev-qt/qtconcurrent:5
-        dev-qt/qtxml:5
-        dev-qt/qtopengl:5
-        net-libs/tox[av]
-"
+	dev-qt/qtconcurrent:5
+	dev-qt/qtcore:5
+	dev-qt/qtgui:5
+	dev-qt/qtmultimedia:5[widgets]
+	dev-qt/qtopengl:5
+	dev-qt/qtxml:5
+	net-libs/tox[av]"
+RDEPEND="${DEPEND}
+	media-plugins/gst-plugins-meta:0.10[opus,vpx,v4l]"
 
-RDEPEND="
-        ${DEPEND}
-        media-plugins/gst-plugins-meta:0.10[opus,vpx,v4l]"
+pkg_pretend() {
+	if [[ ${MERGE_TYPE} != binary ]]; then
+		if [[ $(tc-getCXX) == *g++ ]] ; then
+			if [[ $(gcc-major-version) == 4 && $(gcc-minor-version) -lt 8 || $(gcc-major-version) -lt 4 ]] ; then
+				eerror "You need at least sys-devel/gcc-4.8.0"
+				die "You need at least sys-devel/gcc-4.8.0"
+			fi
+		fi
+	fi
+}
 
 src_configure() {
-        if use x86; then
-                /usr/lib/qt5/bin/qmake
-        elif use amd64; then
-                /usr/lib64/qt5/bin/qmake
-        else
-                die "Not supported arch"
-        fi
+	eqmake5
 }
 
 src_install() {
-        dobin "${S}/qtox" || die "If you get an error that has something to do with "QListWidgetItem::QListWidgetItem", update GCC to 4.8.3 and run gcc-config."
-        doicon -s scalable "${FILESDIR}"/tox.svg
-        make_desktop_entry "qtox" "qTox" "/usr/share/icons/hicolor/scalable/apps/tox.svg" "Network"
+	dobin "${S}/qtox"
+	doicon -s scalable "${FILESDIR}"/tox.svg
+	make_desktop_entry "qtox" "qTox" "/usr/share/icons/hicolor/scalable/apps/tox.svg" "Network"
 }
 
+pkg_postinst() {
+	elog "For sound you will need either alsa or 'pulseaudio'"
+	elog "USE flag in 'dev-qt/qtmultimedia:5' activated, depending on"
+	elog "your system setup."
+}
