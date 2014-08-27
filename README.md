@@ -1,4 +1,4 @@
-To add this overlay, run:
+To add this overlay manually, run:
 
 ```
   sudo su
@@ -9,4 +9,4 @@ To add this overlay, run:
   emerge --sync
 ```
 
-*Note: See [AUTHORS] (https://github.com/urras/gentoo-overlay-tox/blob/master/AUTHORS) for the people who created these Ebuilds.*
+*Note: See [AUTHORS] (https://github.com/urras/gentoo-overlay-tox/blob/master/AUTHORS) for the people who created many of  these Ebuilds.*
