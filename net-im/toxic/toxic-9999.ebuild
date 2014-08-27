@@ -21,7 +21,8 @@ RDEPEND="
 		media-libs/openal
 		sys-libs/ncurses
 		libnotify? ( x11-libs/libnotify )
-		sound-notify? ( media-libs/freealut )"
+		sound-notify? ( media-libs/freealut )
+		app-text/asciidoc"
 
 DEPEND="${RDEPEND}
 		dev-libs/libconfig
