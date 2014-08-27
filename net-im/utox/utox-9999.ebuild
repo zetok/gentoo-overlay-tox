@@ -28,6 +28,11 @@ DEPEND="${RDEPEND}
 
 src_configure() {
 	epatch "${FILESDIR}"/${PN}-dbus.patch
+
+	# respect CFLAGS
+	sed -i \
+		-e '/CFLAGS/s# -g ##' \
+		Makefile || die
 }
 
 src_compile() {
