@@ -4,42 +4,51 @@
 
 EAPI=5
 
-inherit autotools eutils git-2
+inherit autotools git-2 toolchain-funcs
 
 DESCRIPTION="CLI Frontend for Tox"
 HOMEPAGE="http://wiki.tox.im/Toxic"
+SRC_URI=""
 EGIT_REPO_URI="git://github.com/Tox/toxic
 	https://github.com/Tox/toxic"
+
 LICENSE="GPL-3"
 SLOT="0"
 IUSE="+libnotify +sound-notify"
 
 RDEPEND="
-		dev-libs/check
-		dev-libs/libconfig
-		net-libs/tox
-		media-libs/openal
-		sys-libs/ncurses
-		libnotify? ( x11-libs/libnotify )
-		sound-notify? ( media-libs/freealut )"
-
+	dev-libs/libconfig
+	net-libs/tox[av]
+	media-libs/openal
+	sys-libs/ncurses
+	x11-libs/libX11
+	libnotify? ( x11-libs/libnotify )
+	sound-notify? ( media-libs/freealut )"
 DEPEND="${RDEPEND}
-		dev-libs/libconfig
-		virtual/pkgconfig
-		sys-devel/libtool"
+	virtual/pkgconfig"
+
+src_prepare() {
+	# verbose build
+	sed -i \
+		-e 's/@$(CC)/$(CC)/' \
+		build/Makefile || die
+}
 
 src_compile() {
-		use libnotify || export NOTIFY="DISABLE_DESKTOP_NOTIFY=1"
-		use sound-notify || export SOUND_NOTIFY="DISABLE_SOUND_NOTIFY=1"
-		cd "${S}/build"
-		emake PREFIX="/usr" $NOTIFY $SOUND_NOTIFY
+	use libnotify || export NOTIFY="DISABLE_DESKTOP_NOTIFY=1"
+	use sound-notify || export SOUND_NOTIFY="DISABLE_SOUND_NOTIFY=1"
+	emake \
+		CC="$(tc-getCC)" \
+		USER_CFLAGS="${CFLAGS}" \
+		USER_LDFLAGS="${LDFLAGS}" \
+		PREFIX="/usr" ${NOTIFY} ${SOUND_NOTIFY} \
+		-C build
 }
 
 src_install() {
-		cd "${S}/build"
-		emake install PREFIX="/usr" DESTDIR="${D}"
+	emake install PREFIX="/usr" DESTDIR="${D}" -C build
 }
 
 pkg_postinst() {
-		elog "DHT node list is available in /usr/share/${PN}/DHTnodes"
+	elog "DHT node list is available in /usr/share/${PN}/DHTnodes"
 }
