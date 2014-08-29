@@ -23,6 +23,8 @@ DEPEND="
 	dev-qt/qtmultimedia:5[widgets]
 	dev-qt/qtopengl:5
 	dev-qt/qtxml:5
+	media-libs/openal
+	media-libs/opencv
 	net-libs/tox[av]"
 RDEPEND="${DEPEND}
 	media-plugins/gst-plugins-meta:0.10[opus,vpx,v4l]"
