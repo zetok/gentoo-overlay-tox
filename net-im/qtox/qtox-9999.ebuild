@@ -20,14 +20,12 @@ DEPEND="
 	dev-qt/qtconcurrent:5
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5
-	dev-qt/qtmultimedia:5[widgets]
 	dev-qt/qtopengl:5
 	dev-qt/qtxml:5
 	media-libs/openal
-	media-libs/opencv
+	media-libs/opencv[v4l]
 	net-libs/tox[av]"
-RDEPEND="${DEPEND}
-	media-plugins/gst-plugins-meta:0.10[opus,vpx,v4l]"
+RDEPEND="${DEPEND}"
 
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != binary ]]; then
@@ -48,10 +46,4 @@ src_install() {
 	dobin "${S}/qtox"
 	doicon -s scalable "${FILESDIR}"/tox.svg
 	make_desktop_entry "qtox" "qTox" "/usr/share/icons/hicolor/scalable/apps/tox.svg" "Network"
-}
-
-pkg_postinst() {
-	elog "For sound you will need either alsa or 'pulseaudio'"
-	elog "USE flag in 'dev-qt/qtmultimedia:5' activated, depending on"
-	elog "your system setup."
 }
