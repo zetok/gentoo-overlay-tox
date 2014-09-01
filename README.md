@@ -1,3 +1,5 @@
+**Current build status:** [![Build Status](https://travis-ci.org/urras/gentoo-overlay-tox.svg)](https://travis-ci.org/urras/gentoo-overlay-tox)
+
 To add this overlay from layman, run:
 
 ```sudo layman -a tox-overlay```
