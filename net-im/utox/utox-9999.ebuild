@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit eutils fdo-mime gnome2-utils toolchain-funcs git-2
+inherit fdo-mime gnome2-utils toolchain-funcs git-2
 
 DESCRIPTION="Lightweight Tox client"
 HOMEPAGE="https://github.com/notsecure/uTox.git"
@@ -27,8 +27,6 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 src_configure() {
-	epatch "${FILESDIR}"/${PN}-dbus.patch
-
 	# respect CFLAGS
 	sed -i \
 		-e '/CFLAGS/s# -g ##' \
