@@ -11,4 +11,4 @@ To add this overlay manually, run:
   layman -a qt
 ```
 
-*Note: See [AUTHORS] (https://github.com/urras/gentoo-overlay-tox/blob/master/AUTHORS) for the people who created many of  these Ebuilds.*
+*Note: See [AUTHORS] (AUTHORS) for the people who created many of  these Ebuilds.*
