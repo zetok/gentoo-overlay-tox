@@ -23,7 +23,7 @@ DEPEND="
 	dev-qt/qtopengl:5
 	dev-qt/qtxml:5
 	media-libs/openal
-	media-libs/opencv[v4l]
+	media-libs/opencv[-qt4,v4l]
 	net-libs/tox[av]"
 RDEPEND="${DEPEND}"
 
