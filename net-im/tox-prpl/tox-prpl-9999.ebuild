@@ -24,8 +24,8 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 src_prepare() {
-	eautoreconf
 	epatch_user
+	eautoreconf
 }
 
 src_configure() {

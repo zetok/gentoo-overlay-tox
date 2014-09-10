@@ -50,8 +50,8 @@ pkg_setup() {
 }
 
 src_prepare() {
-	eautoreconf
 	epatch_user
+	eautoreconf
 }
 
 src_configure() {
