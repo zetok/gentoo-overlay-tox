@@ -33,6 +33,7 @@ src_prepare() {
 	sed -i \
 		-e 's/@$(CC)/$(CC)/' \
 		build/Makefile || die
+	epatch_user
 }
 
 src_compile() {
