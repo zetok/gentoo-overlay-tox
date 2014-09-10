@@ -22,3 +22,7 @@ SLOT="0"
 
 RDEPEND="net-libs/tox"
 DEPEND="${RDEPEND}"
+
+src_prepare() {
+	epatch_user
+}

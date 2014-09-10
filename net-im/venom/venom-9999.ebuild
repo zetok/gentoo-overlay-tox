@@ -27,6 +27,10 @@ DEPEND="dev-libs/json-glib
 RDEPEND="${DEPEND}
 	sys-devel/gettext"
 
+src_prepare() {
+	epatch_user
+}
+
 src_configure() {
 	local mycmakeargs=(
 		$(cmake-utils_use_enable qrcode QR_ENCODE )

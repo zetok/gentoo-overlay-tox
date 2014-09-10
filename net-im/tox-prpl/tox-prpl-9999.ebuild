@@ -25,6 +25,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	eautoreconf
+	epatch_user
 }
 
 src_configure() {

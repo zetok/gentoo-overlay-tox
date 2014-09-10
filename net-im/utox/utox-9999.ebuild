@@ -26,6 +26,10 @@ RDEPEND="net-libs/tox[av]
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
+src_prepare() {
+	epatch_user
+}
+
 src_configure() {
 	# respect CFLAGS
 	sed -i \

@@ -24,6 +24,10 @@ DEPEND="dev-qt/qtcore:5
 	net-libs/tox"
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+	epatch_user
+}
+
 src_configure() {
 	eqmake5 projectfiles/QtCreator/TOX-Qt-GUI.pro
 }
