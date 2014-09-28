@@ -6,7 +6,7 @@ EAPI=5
 
 inherit eutils qmake-utils git-2
 
-DESCRIPTION="Tox QT GUI"
+DESCRIPTION="GUI for net-libs/tox, using QT5"
 HOMEPAGE="https://github.com/nurupo/ProjectTox-Qt-GUI"
 
 LICENSE="GPL-3"

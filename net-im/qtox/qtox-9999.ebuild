@@ -6,7 +6,7 @@ EAPI=5
 
 inherit eutils qmake-utils git-2
 
-DESCRIPTION="qTox"
+DESCRIPTION="GUI for net-libs/tox using QT5 with code similarities to net-im/tox-gui-qt"
 HOMEPAGE="https://github.com/tux3/qtox"
 SRC_URI=""
 EGIT_REPO_URI="git://github.com/tux3/qtox.git"
