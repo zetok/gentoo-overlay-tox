@@ -6,7 +6,7 @@ EAPI=5
 
 inherit autotools git-2
 
-DESCRIPTION="Encrypted, P2P, messenging, audio and video calling platform"
+DESCRIPTION="Encrypted P2P, messenging, and audio/video calling platform"
 HOMEPAGE="https://tox.im"
 SRC_URI=""
 EGIT_REPO_URI="https://github.com/irungentoo/toxcore"
@@ -17,7 +17,7 @@ KEYWORDS=""
 IUSE="+av daemon logging log-debug log-error log-info log-warn ntox static-libs test"
 
 RDEPEND="
-	>=dev-libs/libsodium-0.7.0
+	>=dev-libs/libsodium-1.0.0
 	daemon? ( dev-libs/libconfig )
 	av? ( media-libs/libvpx
 		media-libs/opus )
