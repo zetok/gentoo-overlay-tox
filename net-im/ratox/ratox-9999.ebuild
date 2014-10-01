@@ -11,7 +11,7 @@ HOMEPAGE="http://git.2f30.org/ratox"
 EGIT_REPO_URI="git://git.2f30.org/ratox
 	http://git.2f30.org/ratox"
 
-LICENSE="GPL-3"
+LICENSE="ISC"
 SLOT="0"
 IUSE=""
 
