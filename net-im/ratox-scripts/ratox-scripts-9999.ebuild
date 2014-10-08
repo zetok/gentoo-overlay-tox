@@ -7,7 +7,7 @@ EAPI=5
 inherit git-2
 
 DESCRIPTION="Scripts for net-im/ratox"
-HOMEPAGE="http://git.2f30.org/ratox"
+HOMEPAGE="http://git.2f30.org/ratox-nuggets"
 EGIT_REPO_URI="git://git.2f30.org/ratox-nuggets
         http://git.2f30.org/ratox-nuggets"
 
@@ -25,16 +25,17 @@ src_prepare() {
 
 src_install() {
         insinto ${INSTALLDIR}
-        doins -r rat-echo rat-remotemic rat-weather rat-weather-voice
+        doins -r rat-echo rat-remotemic rat-weather rat-weather-voice rat-list
         chmod 755 "${D}/${INSTALLDIR}/rat-echo"
         chmod 755 "${D}/${INSTALLDIR}/rat-remotemic"
         chmod 755 "${D}/${INSTALLDIR}/rat-weather"
         chmod 755 "${D}/${INSTALLDIR}/rat-weather-voice"
+        chmod 755 "${D}/${INSTALLDIR}/rat-list"
 }
 
 pkg_postinst() {
 	elog "Installed the following into /usr/bin/"
-	elog "rat-echo rat-remotemic rat-weather rat-weather-voice"
+	elog "rat-echo rat-remotemic rat-weather rat-weather-voice rat-list"
 	elog "Make sure to run them in your Ratox directory"
 
 }
