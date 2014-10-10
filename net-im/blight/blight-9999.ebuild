@@ -6,7 +6,7 @@ EAPI=5
 
 inherit git-2
 
-DESCRIPTION="Blight is a cross-platform graphical user interface for Tox written in Racket"
+DESCRIPTION="Cross-platform graphical user interface for Tox written in Racket"
 HOMEPAGE="https://github.com/lehitoskin/blight"
 EGIT_REPO_URI="git://github.com/lehitoskin/blight
 	https://github.com/lehitoskin/blight"
