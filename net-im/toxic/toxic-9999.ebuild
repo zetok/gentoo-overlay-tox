@@ -21,7 +21,7 @@ RDEPEND="
 	net-libs/tox[av]
 	media-libs/openal
 	sys-libs/ncurses
-	x11? (x11-libs/libX11)
+	x11? ( x11-libs/libX11)
 	libnotify? ( x11-libs/libnotify )
 	sound-notify? ( media-libs/freealut )"
 DEPEND="${RDEPEND}
