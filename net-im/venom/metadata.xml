@@ -6,7 +6,7 @@
 		<name>holgersson</name>
 	</maintainer>
 	<use>
-		<flag name="libnotify">Enable desktop notification support</flag>
+		<flag name="libnotify">Enable desktop notifications support</flag>
 		<flag name="qrcode">Enable qrencode support for ToxID </flag>
 	</use>
 </pkgmetadata>
