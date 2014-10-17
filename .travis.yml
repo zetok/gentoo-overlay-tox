@@ -3,9 +3,9 @@
 #
 language: python
 python:
-    - "3.3"
+    - "3.4"
 env:
-    - PORTAGE_VER="2.2.12"
+    - PORTAGE_VER="2.2.13"
 before_script:
     - mkdir travis-overlay
     - mv !(travis-overlay) travis-overlay/
@@ -24,10 +24,12 @@ before_script:
     - rsync --recursive --links --safe-links --perms --times --omit-dir-times --compress --force --whole-file --delete --stats --human-readable --timeout=180 --exclude=/distfiles --checksum --quiet rsync://rsync.gentoo.org/gentoo-portage /usr/portage
     - ln -s /usr/portage/profiles/base/ /etc/portage/make.profile
     - wget "http://www.gentoo.org/dtd/metadata.dtd" -O /usr/portage/distfiles/metadata.dtd
-    - if ! cmp -s .travis.yml .travis.yml.upstream; then  echo -e "\e[31m !!! .travis.yml outdated! Update available https://github.com/mrueg/repoman-travis \e[0m" > /tmp/update ; fi
+    - SIZE=`stat -c %s .travis.yml.upstream`
+    - if ! cmp -n $SIZE -s .travis.yml .travis.yml.upstream; then  echo -e "\e[31m !!! .travis.yml outdated! Update available https://github.com/mrueg/repoman-travis \e[0m" > /tmp/update ; fi
     - cd travis-overlay
 script:
     - ./../spinner.sh "./../portage-${PORTAGE_VER}/bin/repoman full -d"
+# You can append own scripts after this line
 
 notifications:
   irc: 

@@ -7,10 +7,9 @@ To add this overlay from layman, run:
 To add this overlay manually, run:
 
 ```
-  sudo su
-  layman -f -o https://raw.github.com/urras/gentoo-overlay-tox/master/repository.xml -a tox-overlay
-  # If you are going to use net-im/tox-gui-qt or net-im/toxgui, you need to add the Qt overlay (NOT OUR OVERLAY; FILE BUGS FOR THIS AT THEIR TRACKER)
-  layman -a qt
+sudo su
+layman -f -o https://raw.github.com/urras/gentoo-overlay-tox/master/repository.xml -a tox-overlay
 ```
+If you are going to use net-im/tox-gui-qt or net-im/qtox, you need to add the [Qt overlay](http://wiki.gentoo.org/wiki/Qt/Qt5) using ```layman -a qt```. Please note that the Qt overlay is not our overlay, so please report issues with it at [their repository](https://github.com/gentoo/qt).
 
-*Note: See [AUTHORS] (AUTHORS) for the people who created many of  these Ebuilds.*
+*See [Authors](AUTHORS) for the original authors of some of these ebuilds.*
