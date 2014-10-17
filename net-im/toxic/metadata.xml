@@ -8,7 +8,7 @@
 	<use>
 		<flag name="libnotify">Enable desktop notification support.</flag>
 		<flag name="sound-notify">Adds support for sound notifications.</flag>
-		<flag name="x11">Adds support for X11</flag>
+		<flag name="X">Adds support for X11</flag>
 
 	</use>
 </pkgmetadata>
