@@ -6,6 +6,7 @@
 		<name>holgersson</name>
 	</maintainer>
 	<use>
+		<flag name="av">Enable audio support</flag>
 		<flag name="libnotify">Enable desktop notification support.</flag>
 		<flag name="sound-notify">Adds support for sound notifications.</flag>
 		<flag name="X">Adds support for X11</flag>

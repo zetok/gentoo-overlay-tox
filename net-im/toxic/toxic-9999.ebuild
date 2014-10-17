@@ -14,14 +14,13 @@ EGIT_REPO_URI="git://github.com/Tox/toxic
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="+libnotify +sound-notify +X +AV"
+IUSE="+av +libnotify +sound-notify +X"
 
 RDEPEND="
-	AV? (
-            media-libs/openal
-            net-libs/tox[av]
-	)
-	!AV? ( net-libs/tox )
+	av? (
+		media-libs/openal
+		net-libs/tox[av] )
+	!av? ( net-libs/tox )
 	libnotify? ( x11-libs/libnotify )
 	sound-notify? ( media-libs/freealut )
 	X? ( x11-libs/libX11 )
@@ -40,10 +39,10 @@ src_prepare() {
 }
 
 src_compile() {
+	use av || export AV="DISABLE_AV=1"
 	use libnotify || export NOTIFY="DISABLE_DESKTOP_NOTIFY=1"
 	use sound-notify || export SOUND_NOTIFY="DISABLE_SOUND_NOTIFY=1"
 	use X || export X="DISABLE_X11=1"
-        use AV || export AV="DISABLE_AV=1"
 	emake \
 		CC="$(tc-getCC)" \
 		USER_CFLAGS="${CFLAGS}" \
