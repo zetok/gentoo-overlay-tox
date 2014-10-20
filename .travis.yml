@@ -10,7 +10,7 @@ before_script:
     - mkdir travis-overlay
     - mv !(travis-overlay) travis-overlay/
     - mv .git travis-overlay/
-    - wget "https://raw.githubusercontent.com/urras/repoman-travis/master/.travis.yml" -O .travis.yml.upstream
+    - curl "https://raw.githubusercontent.com/urras/repoman-travis/master/.travis.yml" -o .travis.yml.upstream
     - curl -LO "http://distfiles.gentoo.org/distfiles/portage-${PORTAGE_VER}.tar.bz2"
     - curl -LO  "http://distfiles.gentoo.org/snapshots/portage-latest.tar.xz"
     - curl -LO "https://raw.githubusercontent.com/urras/repoman-travis/master/spinner.sh"
