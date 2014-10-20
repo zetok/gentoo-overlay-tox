@@ -1,19 +1,18 @@
 # Run repoman on travis
-# https://github.com/mrueg/repoman-travis
+# https://github.com/urras/repoman-travis
 #
 language: python
 python:
-    - "3.4"
+    - "3.4.1"
 env:
-    - PORTAGE_VER="2.2.12"
+    - PORTAGE_VER="2.2.14"
 before_script:
     - mkdir travis-overlay
     - mv !(travis-overlay) travis-overlay/
     - mv .git travis-overlay/
-    - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/.travis.yml" -O .travis.yml.upstream
-    - wget "http://distfiles.gentoo.org/distfiles/portage-${PORTAGE_VER}.tar.bz2"
-    - wget "http://distfiles.gentoo.org/snapshots/portage-latest.tar.xz"
-    - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/spinner.sh"
+    - curl -3 "http://distfiles.gentoo.org/distfiles/portage-${PORTAGE_VER}.tar.bz2" -o portage-${PORTAGE_VER}.tar.bz2
+    - curl -3 "http://distfiles.gentoo.org/snapshots/portage-latest.tar.xz" -o portage-latest.tar.xz
+    - curl -3 "https://raw.githubusercontent.com/urras/repoman-travis/master/spinner.sh" -o spinner.sh
     - sudo chmod 777 /etc/passwd /etc/group /etc /usr spinner.sh
     - echo "portage:x:250:250:portage:/var/tmp/portage:/bin/false" >> /etc/passwd
     - echo "portage::250:portage,travis" >> /etc/group
@@ -23,9 +22,7 @@ before_script:
     - cp portage-${PORTAGE_VER}/cnf/repos.conf /etc/portage/
     - rsync --recursive --links --safe-links --perms --times --omit-dir-times --compress --force --whole-file --delete --stats --human-readable --timeout=180 --exclude=/distfiles --checksum --quiet rsync://rsync.gentoo.org/gentoo-portage /usr/portage
     - ln -s /usr/portage/profiles/base/ /etc/portage/make.profile
-    - wget "http://www.gentoo.org/dtd/metadata.dtd" -O /usr/portage/distfiles/metadata.dtd
-    - SIZE=`stat -c %s .travis.yml.upstream`
-    - if ! cmp -n $SIZE -s .travis.yml .travis.yml.upstream; then  echo -e "\e[31m !!! .travis.yml outdated! Update available https://github.com/mrueg/repoman-travis \e[0m" > /tmp/update ; fi
+    - curl -3 "http://www.gentoo.org/dtd/metadata.dtd" -o /usr/portage/distfiles/metadata.dtd
     - cd travis-overlay
 script:
     - ./../spinner.sh "./../portage-${PORTAGE_VER}/bin/repoman full -d"
