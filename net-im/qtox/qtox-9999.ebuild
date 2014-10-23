@@ -22,6 +22,7 @@ DEPEND="
 	dev-qt/qtgui:5[gif,jpeg,png]
 	dev-qt/qtnetwork:5
 	dev-qt/qtopengl:5
+	dev-qt/qtsql:5
 	dev-qt/qtxml:5
 	media-libs/openal
 	media-libs/opencv[-qt4,v4l]
