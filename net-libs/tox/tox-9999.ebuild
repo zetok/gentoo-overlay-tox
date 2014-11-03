@@ -17,7 +17,7 @@ KEYWORDS=""
 IUSE="+av daemon logging log-debug log-error log-info log-warn ntox static-libs test"
 
 RDEPEND="
-	dev-libs/libsodium
+	dev-libs/libsodium[urandom]
 	daemon? ( dev-libs/libconfig )
 	av? ( media-libs/libvpx
 		media-libs/opus )
