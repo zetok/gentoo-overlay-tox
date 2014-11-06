@@ -50,6 +50,6 @@ src_configure() {
 
 src_install() {
 	dobin "${S}/qtox"
-	doicon -s scalable "${FILESDIR}"/tox.svg
-	make_desktop_entry "qtox" "qTox" "/usr/share/icons/hicolor/scalable/apps/tox.svg" "Network"
+	doicon -s scalable "${S}/img/icons/qtox.svg"
+	domenu "${S}/qTox.desktop"
 }
