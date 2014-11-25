@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit eutils git-2
 
 DESCRIPTION=" A minimal FIFO based client for Tox"
 HOMEPAGE="http://git.2f30.org/ratox"

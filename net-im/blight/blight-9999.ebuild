@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit eutils git-2
 
 DESCRIPTION="Cross-platform graphical user interface for Tox written in Racket"
 HOMEPAGE="https://github.com/lehitoskin/blight"

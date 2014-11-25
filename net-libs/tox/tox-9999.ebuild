@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit autotools git-2
+inherit autotools eutils git-2
 
 DESCRIPTION="Encrypted P2P, messenging, and audio/video calling platform"
 HOMEPAGE="https://tox.im"

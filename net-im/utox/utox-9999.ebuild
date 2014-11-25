@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit fdo-mime gnome2-utils toolchain-funcs git-2
+inherit eutils fdo-mime git-2 gnome2-utils toolchain-funcs
 
 DESCRIPTION="Lightweight Tox client"
 HOMEPAGE="https://github.com/notsecure/uTox.git"
