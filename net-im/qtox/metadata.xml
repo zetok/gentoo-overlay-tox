@@ -6,6 +6,7 @@
 		<name>Simon Levermann</name>
 	</maintainer>
 	<use>
+		<flag name="filter_audio">Adds support for filtering audio input</flag>
 		<flag name="X">Adds support for X11</flag>
 	</use>
 </pkgmetadata>
