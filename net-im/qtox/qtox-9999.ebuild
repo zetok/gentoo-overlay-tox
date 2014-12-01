@@ -27,7 +27,9 @@ DEPEND="
 	dev-qt/qtxml:5
 	media-libs/openal
 	media-libs/opencv[-qt4,v4l]
-	net-libs/tox[av]"
+	net-libs/tox[av]
+	x11-libs/libX11
+	x11-libs/libXScrnSaver"
 RDEPEND="${DEPEND}"
 
 pkg_pretend() {
