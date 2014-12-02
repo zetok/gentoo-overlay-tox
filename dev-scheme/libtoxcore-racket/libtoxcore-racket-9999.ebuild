@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2
+inherit eutils git-2
 
 DESCRIPTION="Racket bindings for the Tox library."
 HOMEPAGE="https://github.com/lehitoskin/libtoxcore-racket"
@@ -14,6 +14,10 @@ LICENSE="GPL-3"
 SLOT="0"
 
 RDEPEND=">=dev-scheme/racket-6.0.1[X]"
+
+src_prepare() {
+	epatch_user
+}
 
 src_compile() {
 	raco make main.rkt
