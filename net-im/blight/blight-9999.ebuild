@@ -16,7 +16,7 @@ SLOT="0"
 RDEPEND="net-libs/tox
 	>=dev-db/sqlite-3.8.6
 	>=dev-scheme/racket-6.0.1[X]
-    dev-scheme/libtoxcore-racket"
+	dev-scheme/libtoxcore-racket"
 
 src_prepare() {
 	epatch "$FILESDIR/${P}.patch"
