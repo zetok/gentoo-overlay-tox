@@ -14,7 +14,7 @@ EGIT_REPO_URI="git://github.com/tux3/qtox.git"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="X"
 
 DEPEND="
 	dev-qt/linguist-tools:5
@@ -28,8 +28,8 @@ DEPEND="
 	media-libs/openal
 	media-libs/opencv[-qt4,v4l]
 	net-libs/tox[av]
-	x11-libs/libX11
-	x11-libs/libXScrnSaver"
+	X? ( x11-libs/libX11
+		x11-libs/libXScrnSaver )"
 RDEPEND="${DEPEND}"
 
 pkg_pretend() {
@@ -48,7 +48,8 @@ src_prepare() {
 }
 
 src_configure() {
-	eqmake5
+	use X || NO_X_SUPPORT="DISABLE_PLATFORM_EXT=YES"
+	eqmake5 ${NO_X_SUPPORT}
 }
 
 src_install() {

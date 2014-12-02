@@ -5,4 +5,7 @@
 		<email>simon-github@slevermann.de</email>
 		<name>Simon Levermann</name>
 	</maintainer>
+	<use>
+		<flag name="X">Adds support for X11</flag>
+	</use>
 </pkgmetadata>
