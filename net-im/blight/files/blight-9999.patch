@@ -1,6 +1,6 @@
 diff -Naur a/config.rkt b/config.rkt
---- a/config.rkt	2014-12-03 21:02:01.883068837 -0800
-+++ b/config.rkt	2014-12-03 21:02:43.825067262 -0800
+--- a/config.rkt	2014-12-14 18:49:30.181361600 -0800
++++ b/config.rkt	2014-12-14 18:52:13.599355467 -0800
 @@ -65,7 +65,7 @@
  ; location of sound directory (currently depends on running from same dir
  ; change to /usr/share/blight/sounds (or something) once a proper
@@ -19,3 +19,12 @@ diff -Naur a/config.rkt b/config.rkt
  ; list of icon files
  (define icons (list
                 (build-path icon-dir "offline.png")
+@@ -97,7 +97,7 @@
+ 
+ (define avatar-dir (build-path tox-path "avatars"))
+ 
+-(define logo-dir (build-path "img"))
++(define logo-dir (build-path "/usr/share/icons/hicolor/128x128/apps"))
+ 
+ (define logo (build-path logo-dir "blight-logo-128px.png"))
+ 
