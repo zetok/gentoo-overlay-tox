@@ -31,11 +31,11 @@ src_compile() {
 		${S}/other/*.c \
 		-shared \
 		-Wl,-soname,libfilteraudio.so \
-		-o ${S}/${PN}.so
+		-o "${S}/${PN}.so"
 }
 
 src_install() {
-		dolib ${S}/${PN}.so
+		dolib "${S}/${PN}.so"
 		insinto /usr/include
-		doins ${S}/filter_audio.h
+		doins "${S}/filter_audio.h"
 }
