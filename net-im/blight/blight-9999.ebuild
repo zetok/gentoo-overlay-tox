@@ -12,6 +12,7 @@ EGIT_REPO_URI="git://github.com/lehitoskin/blight
 	https://github.com/lehitoskin/blight"
 LICENSE="GPL-3"
 SLOT="0"
+IUSE="+repl-client"
 
 RDEPEND="net-libs/tox
 	>=dev-db/sqlite-3.8.6
@@ -24,9 +25,15 @@ src_prepare() {
 }
 
 src_compile() {
-	emake
+	emake blight
+	if use repl-client; then
+		emake blight-repl
+	fi
 }
 
 src_install() {
-	emake DESTDIR="${D}/usr" install
+	emake DESTDIR="${D}/usr" install-blight
+	if use repl-client; then
+		emake DESTDIR="${D}/usr" install-repl
+	fi
 }
