@@ -20,10 +20,12 @@ src_prepare() {
 }
 
 src_compile() {
+	emake
 	raco make main.rkt
 }
 
 src_install() {
+	emake DESTDIR="${D}/usr" install
 	mkdir -pv "${D}/usr/share/racket/pkgs/libtoxcore-racket"
 	cp -Rv * "${D}/usr/share/racket/pkgs/libtoxcore-racket/"
 }
