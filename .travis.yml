@@ -14,7 +14,7 @@ before_script:
     - curl -LO "http://distfiles.gentoo.org/distfiles/portage-${PORTAGE_VER}.tar.bz2"
     - curl -LO  "http://distfiles.gentoo.org/snapshots/portage-latest.tar.xz"
     - curl -LO "https://raw.githubusercontent.com/urras/repoman-travis/master/spinner.sh"
-    - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/.travis.yml" -O .travis.yml.upstream
+    - wget "https://raw.githubusercontent.com/urras/repoman-travis/master/.travis.yml" -O .travis.yml.upstream
     - wget "https://github.com/gentoo/portage/archive/v${PORTAGE_VER}.tar.gz" -O portage-${PORTAGE_VER}.tar.gz
     - wget "http://distfiles.gentoo.org/snapshots/portage-latest.tar.xz"
     - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/spinner.sh"
@@ -28,8 +28,8 @@ before_script:
     - rsync --recursive --links --safe-links --perms --times --omit-dir-times --compress --force --whole-file --delete --stats --human-readable --timeout=180 --exclude=/distfiles --checksum --quiet rsync://rsync.gentoo.org/gentoo-portage /usr/portage
     - ln -s /usr/portage/profiles/base/ /etc/portage/make.profile
     - curl "http://www.gentoo.org/dtd/metadata.dtd" -o /usr/portage/distfiles/metadata.dtd
-    - #SIZE=`stat -c %s .travis.yml.upstream`
-    - #if ! cmp -n $SIZE -s .travis.yml .travis.yml.upstream; then echo -e "\e[31m !!! .travis.yml outdated! Update available https://github.com/urras/repoman-travis \e[0m" > /tmp/update ; fi
+    - SIZE=`stat -c %s .travis.yml.upstream`
+    - if ! cmp -n $SIZE -s .travis.yml .travis.yml.upstream; then echo -e "\e[31m !!! .travis.yml outdated! Update available https://github.com/urras/repoman-travis \e[0m" > /tmp/update ; fi
     - cd travis-overlay
 script:
     - ./../spinner.sh "./../portage-${PORTAGE_VER}/bin/repoman full -d"
