@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit autotools eutils git-2
+inherit autotools eutils git-2 user
 
 DESCRIPTION="Encrypted P2P, messenging, and audio/video calling platform"
 HOMEPAGE="https://tox.im"
@@ -68,6 +68,13 @@ src_configure() {
 src_install() {
 	default
 	use daemon && { newinitd "${FILESDIR}"/initd tox-dht-daemon
-		newconfd "${FILESDIR}"/confd tox-dht-daemon ; }
+		newconfd "${FILESDIR}"/confd tox-dht-daemon
+		insinto /etc
+		doins "${FILESDIR}"/tox-bootstrapd.conf ; }
 	prune_libtool_files
+}
+
+pkg_postinst() {
+	use daemon && {	enewgroup ${PN}
+		enewuser ${PN} -1 -1 -1 ${PN} ; }
 }
