@@ -1,8 +1,7 @@
 #!/sbin/runscript
 
-PIDFILE=/run/tox-dht-bootstrap.pid
-LOGDIR=/var/log/tox-dht-bootstrap
-RUNDIR=/var/lib/tox-dht-bootstrap
+PIDDIR=/run/tox-dht-bootstrap
+PIDFILE="${PIDDIR}"/tox-dht-bootstrap.pid
 
 depend() {
 	need net
@@ -11,16 +10,13 @@ depend() {
 start() {
 	ebegin "Starting tox-dht-bootstrap daemon"
 
-	[ -d "${LOGDIR}" ] || mkdir -p "${LOGDIR}"
-	[ -d "${RUNDIR}" ] || mkdir -p "${RUNDIR}"
-	chown -R nobody:nobody "${LOGDIR}" "${RUNDIR}"
+	[ -d "${PIDDIR}" ] || mkdir -p "${PIDDIR}"
+	chown -R ${TOX_USER}:${TOX_GROUP} "${PIDDIR}"
 
 	start-stop-daemon --start \
-		--pidfile "${PIDFILE}" --make-pidfile --background \
-		--stdout "${LOGDIR}/stdout" --stderr "${LOGDIR}/stderr" \
-		--chdir "${RUNDIR}" \
-		--user=nobody --group=nobody \
-		--exec /usr/bin/DHT_bootstrap
+		--pidfile "${PIDFILE}" \
+		--user=${TOX_USER} --group=${TOX_GROUP} \
+		--exec /usr/bin/tox-bootstrapd -- /etc/tox-bootstrapd.conf
 
 	eend $?
 }
