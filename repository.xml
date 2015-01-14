@@ -4,12 +4,12 @@
   <repo quality="experimental" status="unofficial">
     <name>tox-overlay</name>
     <description lang="en">Gentoo overlay for Toxcore, Tox clients, and Tox related projects.</description>
-    <homepage>https://github.com/urras/gentoo-overlay-tox</homepage>
+    <homepage>https://github.com/Tox/gentoo-overlay-tox</homepage>
     <owner type="person">
 		<email>urras@tox.im</email>
 		<name>urras</name>
     </owner>
-    <source type="git">git://github.com/urras/gentoo-overlay-tox.git</source>
-    <feed>https://github.com/urras/gentoo-overlay-tox/commits/master.atom</feed>
+    <source type="git">git://github.com/Tox/gentoo-overlay-tox.git</source>
+    <feed>https://github.com/Tox/gentoo-overlay-tox/commits/master.atom</feed>
   </repo>
 </repositories>
