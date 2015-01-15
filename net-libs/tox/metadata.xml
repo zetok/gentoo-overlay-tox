@@ -7,19 +7,22 @@
 	</maintainer>
 	<use>
 		<flag name="av">Adds support for audio and video.</flag>
-		<flag name="logging">Enables logging, useful for debugging.
+		<flag name="log">Enables logging, useful for debugging.
 			(default log level: DEBUG)</flag>
-		<flag name="log-info">Set log level to INFO (only choose one log-*,
-			needs logging enabled)
+		<flag name="log-trace">Set log level to TRACE (only choose one log-*,
+			needs log enabled)
 		</flag>
 		<flag name="log-debug">Set log level to DEBUG (only choose one log-*,
-			needs logging enabled)
+			needs log enabled)
+		</flag>
+		<flag name="log-info">Set log level to INFO (only choose one log-*,
+			needs log enabled)
 		</flag>
 		<flag name="log-warn">Set log level to WARNING (only choose one log-*,
-			needs logging enabled)
+			needs log enabled)
 		</flag>
 		<flag name="log-error">Set log level to ERROR (only choose one log-*,
-			needs logging enabled)
+			needs log enabled)
 		</flag>
 		<flag name="ntox">Enable the testing nTox client.</flag>
 		<flag name="daemon">Enable the DHT Bootstrap Daemon</flag>
