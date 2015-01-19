@@ -1,10 +1,10 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=5
 
-inherit git-2 toolchain-funcs
+inherit eutils git-2 toolchain-funcs
 
 DESCRIPTION="Lightweight audio filtering library made from webrtc code."
 HOMEPAGE="https://github.com/irungentoo/filter_audio"
@@ -19,23 +19,14 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+		epatch_user
+}
+
 src_compile() {
-		$(tc-getCC) \
-		-fPIC \
-		${LDFLAGS} \
-		${CFLAGS} \
-		${S}/filter_audio.c \
-		${S}/aec/*.c \
-		${S}/agc/*.c \
-		${S}/ns/*.c \
-		${S}/other/*.c \
-		-shared \
-		-Wl,-soname,libfilteraudio.so \
-		-o "${S}/${PN}.so"
+		emake CC="$(tc-getCC)"
 }
 
 src_install() {
-		dolib "${S}/${PN}.so"
-		insinto /usr/include
-		doins "${S}/filter_audio.h"
+		emake DESTDIR="${D}" PREFIX="/usr" install
 }
