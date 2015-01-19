@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,10 +13,11 @@ EGIT_REPO_URI="git://github.com/notsecure/uTox.git
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="+dbus"
+IUSE="+dbus +filter_audio"
 
 RDEPEND="net-libs/tox[av]
 	media-libs/freetype
+	filter_audio? ( media-libs/libfilteraudio )
 	media-libs/libv4l
 	media-libs/libvpx
 	media-libs/openal
@@ -38,7 +39,10 @@ src_configure() {
 }
 
 src_compile() {
-	emake CC="$(tc-getCC)" DBUS=$(usex dbus "1" "0")
+	emake \
+		CC="$(tc-getCC)" \
+		DBUS=$(usex dbus "1" "0") \
+		FILTER_AUDIO=$(usex filter_audio "1" "0")
 }
 
 src_install() {
