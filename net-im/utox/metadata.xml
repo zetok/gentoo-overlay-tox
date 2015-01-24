@@ -4,4 +4,8 @@
 	<maintainer>
 		<email>cp19cb97@hotmail.com</email>
 	</maintainer>
+	<use>
+		<flag name="dbus">Adds dbus support for desktop notificatoins</flag>
+		<flag name="filter_audio">Adds support for filtering audio input</flag>
+	</use>
 </pkgmetadata>
