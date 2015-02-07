@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
 <repositories xmlns="" version="1.0">
-  <repo quality="experimental" status="unofficial">
+  <repo quality="experimental" status="official">
     <name>tox-overlay</name>
-    <description lang="en">Gentoo overlay for Toxcore, Tox clients, and Tox related projects.</description>
+    <description lang="en">Official Gentoo overlay for Toxcore, Tox clients, and Tox related projects.</description>
     <homepage>https://github.com/Tox/gentoo-overlay-tox</homepage>
-    <owner type="person">
+    <owner type="project">
 		<email>urras@tox.im</email>
 		<name>urras</name>
     </owner>
