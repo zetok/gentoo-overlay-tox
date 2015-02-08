@@ -26,12 +26,6 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}/usr" install
-	mkdir -pv "${D}/usr/share/racket/pkgs/libtoxcore-racket"
-	cp -Rv * "${D}/usr/share/racket/pkgs/libtoxcore-racket/"
-}
-
-pkg_postinst() {
-	raco link -i "/usr/share/racket/pkgs/libtoxcore-racket"
 }
 
 pkg_prerm() {
