@@ -13,7 +13,8 @@ EGIT_REPO_URI="git://github.com/lehitoskin/libopenal-racket
 LICENSE="zlib"
 SLOT="0"
 
-RDEPEND=">=dev-scheme/racket-6.0.1[X]"
+RDEPEND=">=dev-scheme/racket-6.0.1[X]
+	media-libs/openal"
 
 src_prepare() {
 	epatch_user
