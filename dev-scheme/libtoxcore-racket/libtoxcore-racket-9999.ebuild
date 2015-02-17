@@ -28,6 +28,10 @@ src_install() {
 	emake DESTDIR="${D}/usr" install
 }
 
+pkg_postinst() {
+    raco link -i "/usr/share/racket/pkgs/libtoxcore-racket"
+}
+
 pkg_prerm() {
 	raco link -ir "/usr/share/racket/pkgs/libtoxcore-racket"
 }
