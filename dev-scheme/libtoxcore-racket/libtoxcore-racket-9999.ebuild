@@ -21,7 +21,6 @@ src_prepare() {
 
 src_compile() {
 	emake
-	raco make main.rkt
 }
 
 src_install() {
