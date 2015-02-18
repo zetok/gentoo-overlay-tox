@@ -13,7 +13,8 @@ EGIT_REPO_URI="git://github.com/lehitoskin/libtoxcore-racket
 LICENSE="GPL-3"
 SLOT="0"
 
-RDEPEND=">=dev-scheme/racket-6.0.1[X]"
+RDEPEND=">=dev-scheme/racket-6.0.1[X]
+	net-libs/tox"
 
 src_prepare() {
 	epatch_user
@@ -21,7 +22,6 @@ src_prepare() {
 
 src_compile() {
 	emake
-	raco make main.rkt
 }
 
 src_install() {
