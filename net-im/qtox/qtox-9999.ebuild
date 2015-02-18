@@ -16,8 +16,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE="+filter_audio X"
 
-DEPEND="
-	dev-qt/linguist-tools:5
+DEPEND="dev-qt/linguist-tools:5
 	dev-qt/qtconcurrent:5
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5[gif,jpeg,png]
@@ -32,6 +31,7 @@ DEPEND="
 	net-libs/tox[av]
 	X? ( x11-libs/libX11
 		x11-libs/libXScrnSaver )"
+
 RDEPEND="${DEPEND}"
 
 pkg_pretend() {

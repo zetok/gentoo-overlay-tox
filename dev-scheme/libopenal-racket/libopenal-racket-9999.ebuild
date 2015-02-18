@@ -29,7 +29,7 @@ src_install() {
 }
 
 pkg_postinst() {
-    raco link -i "/usr/share/racket/pkgs/libopenal-racket"
+	raco link -i "/usr/share/racket/pkgs/libopenal-racket"
 }
 
 pkg_prerm() {
