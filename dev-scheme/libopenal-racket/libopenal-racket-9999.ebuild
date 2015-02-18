@@ -10,7 +10,7 @@ DESCRIPTION="Racket bindings for the OpenAL library."
 HOMEPAGE="https://github.com/lehitoskin/libopenal-racket"
 EGIT_REPO_URI="git://github.com/lehitoskin/libopenal-racket
 	https://github.com/lehitoskin/libopenal-racket"
-LICENSE="zlib"
+LICENSE="ZLIB"
 SLOT="0"
 
 RDEPEND=">=dev-scheme/racket-6.0.1[X]
