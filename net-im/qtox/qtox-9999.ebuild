@@ -16,7 +16,8 @@ SLOT="0"
 KEYWORDS=""
 IUSE="+filter_audio X"
 
-DEPEND="dev-qt/linguist-tools:5
+DEPEND="
+	dev-qt/linguist-tools:5
 	dev-qt/qtconcurrent:5
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5[gif,jpeg,png]
@@ -31,15 +32,14 @@ DEPEND="dev-qt/linguist-tools:5
 	net-libs/tox[av]
 	X? ( x11-libs/libX11
 		x11-libs/libXScrnSaver )"
-
 RDEPEND="${DEPEND}"
 
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != binary ]]; then
 		if [[ $(tc-getCXX) == *g++ ]] ; then
 			if [[ $(gcc-major-version) == 4 && $(gcc-minor-version) -lt 8 || $(gcc-major-version) -lt 4 ]] ; then
-				eerror "You need at least sys-devel/gcc-4.8.0"
-				die "You need at least sys-devel/gcc-4.8.0"
+				eerror "You need at least sys-devel/gcc-4.8.3"
+				die "You need at least sys-devel/gcc-4.8.3"
 			fi
 		fi
 	fi
