@@ -72,6 +72,8 @@ src_install() {
 		newconfd "${FILESDIR}"/confd tox-dht-daemon
 		insinto /etc
 		doins "${FILESDIR}"/tox-bootstrapd.conf ; }
+	if use systemd ; then
+		systemd_dounit "${FILESDIR}"/tox-bootstrapd.service ; }
 	prune_libtool_files
 }
 

@@ -7,9 +7,9 @@ EAPI=5
 inherit eutils fdo-mime git-2 gnome2-utils toolchain-funcs
 
 DESCRIPTION="Lightweight Tox client"
-HOMEPAGE="https://github.com/notsecure/uTox.git"
+HOMEPAGE="https://github.com/notsecure/uTox"
 EGIT_REPO_URI="git://github.com/notsecure/uTox.git
-	https://github.com/notsecure/uTox.git"
+	https://github.com/notsecure/uTox.git"z
 
 LICENSE="GPL-3"
 SLOT="0"
