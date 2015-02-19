@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit autotools eutils git-2 user
+inherit autotools eutils git-2 user systemd
 
 DESCRIPTION="Encrypted P2P, messenging, and audio/video calling platform"
 HOMEPAGE="https://tox.im"
@@ -14,13 +14,14 @@ EGIT_REPO_URI="https://github.com/irungentoo/toxcore"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE="+av daemon log log-debug log-error log-info log-trace log-warn ntox static-libs test"
+IUSE="+av daemon log log-debug log-error log-info log-trace log-warn ntox static-libs test systemd"
 
 RDEPEND="
 	>=dev-libs/libsodium-0.6.1[urandom,asm]
 	daemon? ( dev-libs/libconfig )
 	av? ( media-libs/libvpx
 		media-libs/opus )
+	systemd? ( sys-apps/systemd  )
 	ntox? ( sys-libs/ncurses )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
@@ -72,8 +73,7 @@ src_install() {
 		newconfd "${FILESDIR}"/confd tox-dht-daemon
 		insinto /etc
 		doins "${FILESDIR}"/tox-bootstrapd.conf ; }
-	if use systemd ; then
-		systemd_dounit "${FILESDIR}"/tox-bootstrapd.service ; }
+	use systemd && systemd_dounit "${FILESDIR}"/tox-bootstrapd.service
 	prune_libtool_files
 }
 
