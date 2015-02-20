@@ -14,14 +14,13 @@ EGIT_REPO_URI="https://github.com/irungentoo/toxcore"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE="+av daemon log log-debug log-error log-info log-trace log-warn ntox static-libs test systemd"
+IUSE="+av daemon log log-debug log-error log-info log-trace log-warn ntox static-libs test"
 
 RDEPEND="
 	>=dev-libs/libsodium-0.6.1[urandom,asm]
 	daemon? ( dev-libs/libconfig )
 	av? ( media-libs/libvpx
 		media-libs/opus )
-	systemd? ( sys-apps/systemd  )
 	ntox? ( sys-libs/ncurses )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
@@ -72,8 +71,8 @@ src_install() {
 	use daemon && { newinitd "${FILESDIR}"/initd tox-dht-daemon
 		newconfd "${FILESDIR}"/confd tox-dht-daemon
 		insinto /etc
-		doins "${FILESDIR}"/tox-bootstrapd.conf ; }
-	use systemd && systemd_dounit "${FILESDIR}"/tox-bootstrapd.service
+		doins "${FILESDIR}"/tox-bootstrapd.conf
+		systemd_dounit "${FILESDIR}"/tox-bootstrapd.service ; }
 	prune_libtool_files
 }
 
