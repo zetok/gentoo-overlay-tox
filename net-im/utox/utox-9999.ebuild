@@ -32,7 +32,7 @@ src_prepare() {
 }
 
 src_configure() {
-	if use filter_audio; then
+	if use filter_audio && [ "${PROFILE_IS_HARDENED}" = 1 ]; then
 		ewarn "Building µTox with support for filter_audio using hardened profile results in"
 		ewarn "crash upon start. For details, see https://github.com/notsecure/uTox/issues/844"
 	fi
