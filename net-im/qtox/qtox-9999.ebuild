@@ -59,7 +59,11 @@ src_configure() {
 	use filter_audio || NO_FILTER_AUDIO="DISABLE_FILTER_AUDIO=YES"
 	use gtk || NO_GTK_SUPPORT="ENABLE_SYSTRAY_STATUSNOTIFIER_BACKEND=NO"
 	use X || NO_X_SUPPORT="DISABLE_PLATFORM_EXT=YES"
-	eqmake5 ${NO_FILTER_AUDIO} ${NO_GTK_SUPPORT} ${NO_X_SUPPORT}
+	eqmake5 \
+			${NO_FILTER_AUDIO} \
+			${NO_GTK_SUPPORT} \
+			${NO_X_SUPPORT} \
+			ENABLE_SYSTRAY_UNITY_BACKEND=NO # disable unity support
 }
 
 src_install() {
