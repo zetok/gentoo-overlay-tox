@@ -14,7 +14,7 @@ EGIT_REPO_URI="git://github.com/tux3/qtox.git"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE="+filter_audio X"
+IUSE="+filter_audio gtk X"
 
 DEPEND="
 	dev-qt/linguist-tools:5
@@ -29,6 +29,12 @@ DEPEND="
 	filter_audio? ( media-libs/libfilteraudio )
 	media-libs/openal
 	media-libs/opencv[-qt4,v4l]
+	gtk? (	dev-libs/atk
+			dev-libs/glib:2
+			x11-libs/gdk-pixbuf[X]
+			x11-libs/gtk+:2
+			x11-libs/cairo[X]
+			x11-libs/pango[X] )
 	net-libs/tox[av]
 	X? ( x11-libs/libX11
 		x11-libs/libXScrnSaver )"
@@ -51,8 +57,9 @@ src_prepare() {
 
 src_configure() {
 	use filter_audio || NO_FILTER_AUDIO="DISABLE_FILTER_AUDIO=YES"
+	use gtk || NO_GTK_SUPPORT="ENABLE_SYSTRAY_STATUSNOTIFIER_BACKEND=NO"
 	use X || NO_X_SUPPORT="DISABLE_PLATFORM_EXT=YES"
-	eqmake5 ${NO_FILTER_AUDIO} ${NO_X_SUPPORT}
+	eqmake5 ${NO_FILTER_AUDIO} ${NO_GTK_SUPPORT} ${NO_X_SUPPORT}
 }
 
 src_install() {
