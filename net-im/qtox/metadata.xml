@@ -7,7 +7,7 @@
 	</maintainer>
 	<use>
 		<flag name="filter_audio">Adds support for filtering audio input</flag>
-		<flag name="gtk">Adds support for GTK tray backend</flag>
+		<flag name="gtk">Adds support for GTK and Status Notifier tray backends</flag>
 		<flag name="X">Adds support for X11</flag>
 	</use>
 </pkgmetadata>
