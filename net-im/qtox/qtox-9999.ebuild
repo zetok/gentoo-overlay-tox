@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -14,7 +14,7 @@ EGIT_REPO_URI="git://github.com/tux3/qtox.git"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE="+filter_audio gtk X"
+IUSE="+filter_audio gtk unity X"
 
 DEPEND="
 	dev-qt/linguist-tools:5
@@ -36,6 +36,7 @@ DEPEND="
 			x11-libs/cairo[X]
 			x11-libs/pango[X] )
 	net-libs/tox[av]
+	unity? ( dev-libs/libappindicator )
 	X? ( x11-libs/libX11
 		x11-libs/libXScrnSaver )"
 RDEPEND="${DEPEND}"
@@ -58,12 +59,13 @@ src_prepare() {
 src_configure() {
 	use filter_audio || NO_FILTER_AUDIO="DISABLE_FILTER_AUDIO=YES"
 	use gtk || NO_GTK_SUPPORT="ENABLE_SYSTRAY_STATUSNOTIFIER_BACKEND=NO ENABLE_SYSTRAY_GTK_BACKEND=NO"
+	use unity && UNITY_SUPPORT="ENABLE_SYSTRAY_UNITY_BACKEND=YES"
 	use X || NO_X_SUPPORT="DISABLE_PLATFORM_EXT=YES"
 	eqmake5 \
 			${NO_FILTER_AUDIO} \
 			${NO_GTK_SUPPORT} \
 			${NO_X_SUPPORT} \
-			ENABLE_SYSTRAY_UNITY_BACKEND=NO # disable unity support
+			${UNITY_SUPPORT}
 }
 
 src_install() {
