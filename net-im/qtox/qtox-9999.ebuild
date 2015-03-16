@@ -27,6 +27,7 @@ DEPEND="
 	dev-qt/qtsvg:5
 	dev-qt/qtxml:5
 	filter_audio? ( media-libs/libfilteraudio )
+	media-gfx/qrencode
 	media-libs/openal
 	media-libs/opencv[-qt4,v4l]
 	gtk? (	dev-libs/atk
