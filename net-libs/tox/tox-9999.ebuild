@@ -80,3 +80,4 @@ pkg_postinst() {
 	use daemon && {	enewgroup ${PN}
 		enewuser ${PN} -1 -1 -1 ${PN} ; }
 }
+
