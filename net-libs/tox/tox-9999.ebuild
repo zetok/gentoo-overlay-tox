@@ -80,8 +80,10 @@ pkg_postinst() {
 	use daemon && {	enewgroup ${PN}
 	enewuser ${PN} -1 -1 -1 ${PN}
 	ewarn "Backwards compatability with the bootstrap daemon"
-	ewarn "might have been broken a while ago,"
-	ewarn "to resolve this issue remove '/var/lib/tox-dht-bootstrap/key',"
-	ewarn "and '/run/tox-dht-bootstrap/tox-dht-bootstrap.pid',"
-	ewarn "then re-emerge net-libs/tox" ; }
+	ewarn "might have been broken a while ago."
+	ewarn "To resolve this issue, REMOVE the following files:"
+	ewarn "/var/lib/tox-dht-bootstrap/key"
+	ewarn "/etc/tox-bootstrapd.conf"
+	ewarn "/run/tox-dht-bootstrap/tox-dht-bootstrap.pid"
+	ewarn "Then just re-emerge net-libs/tox" ; }
 }
