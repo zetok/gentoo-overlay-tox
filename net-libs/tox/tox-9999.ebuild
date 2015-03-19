@@ -78,6 +78,11 @@ src_install() {
 
 pkg_postinst() {
 	use daemon && {	enewgroup ${PN}
-		enewuser ${PN} -1 -1 -1 ${PN} ; }
+	enewuser ${PN} -1 -1 -1 ${PN}
+	ewarn "Backwards compatability with the bootstrap daemon"
+	ewarn "might have been broken a while ago,"
+	ewarn "to resolve this issue remove '/var/lib/tox-dht-bootstrap/key',"
+	ewarn "and '/run/tox-dht-bootstrap/tox-dht-bootstrap.pid',"
+	ewarn "then re-emerge net-libs/tox" ; }
 }
 
