@@ -85,4 +85,3 @@ pkg_postinst() {
 	ewarn "and '/run/tox-dht-bootstrap/tox-dht-bootstrap.pid',"
 	ewarn "then re-emerge net-libs/tox" ; }
 }
-
