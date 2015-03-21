@@ -34,7 +34,7 @@ src_prepare() {
 	# verbose build
 	sed -i \
 		-e 's/@$(CC)/$(CC)/' \
-		build/Makefile || die
+		Makefile || die
 	epatch_user
 }
 
@@ -47,12 +47,11 @@ src_compile() {
 		CC="$(tc-getCC)" \
 		USER_CFLAGS="${CFLAGS}" \
 		USER_LDFLAGS="${LDFLAGS}" \
-		PREFIX="/usr" ${NOTIFY} ${SOUND_NOTIFY} ${X} ${AV} \
-		-C build
+		PREFIX="/usr" ${NOTIFY} ${SOUND_NOTIFY} ${X} ${AV}
 }
 
 src_install() {
-	emake install PREFIX="/usr" DESTDIR="${D}" -C build
+	emake install PREFIX="/usr" DESTDIR="${D}"
 }
 
 pkg_postinst() {
