@@ -11,6 +11,7 @@ HOMEPAGE="http://wiki.tox.im/Toxic"
 SRC_URI=""
 EGIT_REPO_URI="git://github.com/Tox/toxic
 	https://github.com/Tox/toxic"
+EGIT_COMMIT="c34ecc8dfde5764294a0cbbdb4212f708a21838f" # only until other clients work with new API
 
 LICENSE="GPL-3"
 SLOT="0"
