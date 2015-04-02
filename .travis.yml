@@ -7,6 +7,7 @@ python:
 env:
     - PORTAGE_VER="2.2.18"
 before_script:
+    - echo Timestamp: $(date)
     - mkdir travis-overlay
     - mv !(travis-overlay) travis-overlay/
     - mv .git travis-overlay/
@@ -27,7 +28,7 @@ before_script:
     - tar xzf portage-tree.tar.gz -C /usr/portage --strip-components=1
     - cp portage-${PORTAGE_VER}/cnf/repos.conf /etc/portage/
     - ln -s /usr/portage/profiles/base/ /etc/portage/make.profile
-    - curl "https://www.gentoo.org/dtd/metadata.dtd" -o /usr/portage/distfiles/metadata.dtd
+    - wget "http://www.gentoo.org/dtd/metadata.dtd" -O /usr/portage/distfiles/metadata.dtd
     - SIZE=`stat -c %s .travis.yml.upstream`
     - cd travis-overlay
 script:
