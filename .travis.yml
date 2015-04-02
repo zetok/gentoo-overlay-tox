@@ -7,7 +7,7 @@ python:
 env:
     - PORTAGE_VER="2.2.18"
 before_script:
-    - echo Timestamp: $(date)
+    - date
     - mkdir travis-overlay
     - mv !(travis-overlay) travis-overlay/
     - mv .git travis-overlay/
