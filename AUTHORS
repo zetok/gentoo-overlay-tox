@@ -5,7 +5,8 @@
 # 1. Contributors, original repositories and overlays
 #------------------------------------------------------
 
-# https://github.com/msva and http://git.rout0r.org/~whitekiba >>> net-im/tox-gui-qt
+# https://github.com/msva and http://git.rout0r.org/~whitekiba >>> 
+net-im/tox-gui-qt (Deprecated)
 # https://suigintou.weedy.ca/trac/gentoo-overlay               >>> net-libs/tox + net-im/toxic
 # https://github.com/hasufell                                  >>> net-im/tox-prpl
 # http://git.overlays.gentoo.org/gitweb/?p=user/emery.git      >>> net-libs/tox + net-im/toxic + net-im/venom #(Previously)
