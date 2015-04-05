@@ -10,7 +10,6 @@ DESCRIPTION="GUI for net-libs/tox using QT5 with code similarities to net-im/tox
 HOMEPAGE="https://github.com/tux3/qtox"
 SRC_URI=""
 EGIT_REPO_URI="git://github.com/tux3/qtox.git"
-EGIT_COMMIT="f55fd40ec66e43625b4f206c08c9b511b6934d97" # only until it will work with new API
 
 LICENSE="GPL-3"
 SLOT="0"

@@ -10,7 +10,6 @@ DESCRIPTION="Lightweight Tox client"
 HOMEPAGE="https://github.com/notsecure/uTox"
 EGIT_REPO_URI="git://github.com/notsecure/uTox.git
 	https://github.com/notsecure/uTox.git"
-EGIT_COMMIT="bdd1a009518e325a73a527da152793102b765ef6" # only until other clients will have support for new API
 
 LICENSE="GPL-3"
 SLOT="0"

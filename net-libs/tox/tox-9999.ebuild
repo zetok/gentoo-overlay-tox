@@ -9,8 +9,8 @@ inherit autotools eutils git-2 user systemd
 DESCRIPTION="Encrypted P2P, messenging, and audio/video calling platform"
 HOMEPAGE="https://tox.im"
 SRC_URI=""
-EGIT_REPO_URI="https://github.com/irungentoo/toxcore"
-EGIT_COMMIT="4ad76497881ee2a623acdedcf0ac10406208b716" # only until there clients support new API
+EGIT_REPO_URI="git://github.com/irungentoo/toxcore.git
+	https://github.com/irungentoo/toxcore.git"
 
 LICENSE="GPL-3"
 SLOT="0"

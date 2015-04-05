@@ -11,9 +11,6 @@ HOMEPAGE="https://github.com/JFreegman/ToxBot"
 SRC_URI=""
 EGIT_REPO_URI="git://github.com/JFreegman/ToxBot.git"
 
-# workaround until all clients are on new api
-EGIT_COMMIT="acfabb8ca43d1eb7542719ffc0884a7fb91550af"
-
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
