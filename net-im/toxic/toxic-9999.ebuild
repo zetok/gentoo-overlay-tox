@@ -52,7 +52,17 @@ src_compile() {
 }
 
 src_install() {
-	emake install PREFIX="/usr" DESTDIR="${D}"
+	use av || export AV="DISABLE_AV=1"
+	use libnotify || export NOTIFY="DISABLE_DESKTOP_NOTIFY=1"
+	use sound-notify || export SOUND_NOTIFY="DISABLE_SOUND_NOTIFY=1"
+	use X || export X="DISABLE_X11=1"
+
+	# ↑ needed workaround, without it "missing" things may compile again in install() –.–"
+
+	emake \
+		install PREFIX="/usr" DESTDIR="${D}" \
+		${NOTIFY} ${SOUND_NOTIFY} ${X} ${AV} # part of workaround
+
 }
 
 pkg_postinst() {
