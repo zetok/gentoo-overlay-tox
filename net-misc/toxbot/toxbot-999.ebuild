@@ -18,10 +18,10 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 
-DEPEND="net-libs/tox[av]"
-
-RDEPEND="${DEPEND}
+DEPEND="net-libs/tox[av]
 	virtual/pkgconfig"
+
+RDEPEND="${DEPEND}"
 
 src_prepare() {
 	# verbose build
