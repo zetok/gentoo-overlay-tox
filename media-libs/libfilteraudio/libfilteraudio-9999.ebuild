@@ -20,13 +20,13 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-		epatch_user
+	epatch_user
 }
 
 src_compile() {
-		emake CC="$(tc-getCC)"
+	emake CC="$(tc-getCC)"
 }
 
 src_install() {
-		emake DESTDIR="${D}" PREFIX="/usr" LIBDIR="$(get_libdir)" install
+	emake DESTDIR="${D}" PREFIX="/usr" LIBDIR="$(get_libdir)" install
 }
