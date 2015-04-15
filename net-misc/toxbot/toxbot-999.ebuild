@@ -18,13 +18,13 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 
-DEPEND="net-libs/tox[av]
+RDEPEND="net-libs/tox[av]"
+
+DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
-RDEPEND="${DEPEND}"
-
 src_prepare() {
-	# verbose build
+	# Verbose build
 	sed -i \
 			-e 's/@$(CC)/$(CC)/' \
 			Makefile || die
