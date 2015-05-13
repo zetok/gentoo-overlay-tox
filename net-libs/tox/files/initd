@@ -1,7 +1,7 @@
 #!/sbin/runscript
 
-PIDDIR=/run/tox-dht-bootstrap
-PIDFILE="${PIDDIR}"/tox-dht-bootstrap.pid
+PIDDIR=/run/tox-bootstrapd
+PIDFILE="${PIDDIR}"/tox-bootstrap.pid
 
 depend() {
 	need net
