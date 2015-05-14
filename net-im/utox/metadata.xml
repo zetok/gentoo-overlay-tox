@@ -2,7 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<email>cp19cb97@hotmail.com</email>
+		<email>maintainer-wanted@gentoo.org</email>
 	</maintainer>
 	<use>
 		<flag name="dbus">Adds dbus support for desktop notifications</flag>
