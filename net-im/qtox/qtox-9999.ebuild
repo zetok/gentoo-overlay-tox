@@ -29,7 +29,7 @@ DEPEND="
 	filter_audio? ( media-libs/libfilteraudio )
 	media-gfx/qrencode
 	media-libs/openal
-	media-libs/opencv[-qt4,v4l]
+	>=media-video/ffmpeg-2.6.3[webp,v4l]
 	gtk? (	dev-libs/atk
 			dev-libs/glib:2
 			x11-libs/gdk-pixbuf[X]
