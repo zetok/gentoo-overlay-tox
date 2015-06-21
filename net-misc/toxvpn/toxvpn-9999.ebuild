@@ -20,7 +20,6 @@ RDEPEND="dev-libs/jsoncpp
 		net-libs/tox"
 DEPEND="${RDEPEND}"
 
-
 src_prepare() {
 	epatch_user
 }
