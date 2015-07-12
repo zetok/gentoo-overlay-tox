@@ -6,7 +6,7 @@ EAPI=5
 
 inherit autotools eutils git-2 user systemd
 
-DESCRIPTION="Encrypted P2P, messenging, and audio/video calling platform"
+DESCRIPTION="Encrypted P2P, messaging, and audio/video calling platform"
 HOMEPAGE="https://tox.chat"
 SRC_URI=""
 EGIT_REPO_URI="git://github.com/irungentoo/toxcore.git
