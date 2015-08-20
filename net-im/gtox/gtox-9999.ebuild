@@ -18,9 +18,11 @@ KEYWORDS=""
 
 DEPEND="
 	dev-util/cmake
-	dev-cpp/gtkmm:3.0
+	>=sys-devel/gcc-4.9.3
+	>=dev-cpp/gtkmm-3.16.0
 	dev-libs/atk
 	dev-libs/glib:2
+	dev-cpp/glibmm
 	dev-libs/flatbuffers
 	x11-libs/gtk+:3
 	x11-libs/cairo[X]
@@ -30,7 +32,7 @@ DEPEND="
 	dev-db/sqlite:3
 	sys-devel/gettext
 	media-libs/libcanberra[gtk3,sound]
-	dev-cpp/gstreamermm
+	>=dev-cpp/gstreamermm-1.0.10
 	net-libs/tox[av]
 	x11-libs/libX11"
 RDEPEND="${DEPEND}"
