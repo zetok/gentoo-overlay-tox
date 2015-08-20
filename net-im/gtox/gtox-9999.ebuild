@@ -18,7 +18,7 @@ KEYWORDS=""
 
 DEPEND="
 	dev-util/cmake
-	>=sys-devel/gcc-4.9.3
+	>=sys-devel/gcc-4.9.0
 	>=dev-cpp/gtkmm-3.16.0
 	dev-libs/atk
 	dev-libs/glib:2
