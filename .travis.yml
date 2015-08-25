@@ -29,10 +29,9 @@ before_script:
     - cp portage-${PORTAGE_VER}/cnf/repos.conf /etc/portage/
     - ln -s /usr/portage/profiles/base/ /etc/portage/make.profile
     - wget "https://www.gentoo.org/dtd/metadata.dtd" -O /usr/portage/distfiles/metadata.dtd
-    - SIZE=`stat -c %s .travis.yml.upstream`
     - cd travis-overlay
 script:
-    - ./../spinner.sh "./../portage-${PORTAGE_VER}/bin/repoman full -d"
+    - ./../spinner.sh "python ../portage-${PORTAGE_VER}/bin/repoman full -d"
 # You can append own scripts after this line
 
 notifications:
