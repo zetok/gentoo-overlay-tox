@@ -9,7 +9,8 @@ inherit eutils qmake-utils git-2
 DESCRIPTION="GUI for net-libs/tox using QT5 with code similarities to net-im/tox-gui-qt"
 HOMEPAGE="https://github.com/tux3/qtox"
 SRC_URI=""
-EGIT_REPO_URI="git://github.com/tux3/qtox.git"
+EGIT_REPO_URI="git://github.com/tux3/qtox.git
+	https://github.com/tux3/qtox.git"
 
 LICENSE="GPL-3"
 SLOT="0"
