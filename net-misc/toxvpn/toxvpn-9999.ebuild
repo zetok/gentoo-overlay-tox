@@ -9,7 +9,8 @@ inherit cmake-utils eutils git-2
 DESCRIPTION="toxvpn allows one to make tunneled point to point connections over Tox"
 HOMEPAGE="https://github.com/cleverca22/toxvpn"
 SRC_URI=""
-EGIT_REPO_URI="git://github.com/cleverca22/toxvpn.git"
+EGIT_REPO_URI="git://github.com/cleverca22/toxvpn.git
+	https://github.com/cleverca22/toxvpn.git"
 
 LICENSE="GPL-3"
 SLOT="0"

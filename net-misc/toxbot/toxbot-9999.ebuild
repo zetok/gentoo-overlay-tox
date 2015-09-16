@@ -9,7 +9,8 @@ inherit eutils git-2 toolchain-funcs
 DESCRIPTION="Tox groupchats bot"
 HOMEPAGE="https://github.com/JFreegman/ToxBot"
 SRC_URI=""
-EGIT_REPO_URI="git://github.com/JFreegman/ToxBot.git"
+EGIT_REPO_URI="git://github.com/JFreegman/ToxBot.git
+	https://github.com/JFreegman/ToxBot.git"
 
 LICENSE="GPL-3"
 SLOT="0"

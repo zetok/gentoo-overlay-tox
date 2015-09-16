@@ -9,7 +9,8 @@ inherit eutils git-2 cmake-utils
 DESCRIPTION="A GTK3 Tox-Client"
 HOMEPAGE="https://github.com/kokutoru/gtox"
 SRC_URI=""
-EGIT_REPO_URI="git://github.com/kokutoru/gtox.git"
+EGIT_REPO_URI="git://github.com/kokutoru/gtox.git
+	https://github.com/kokutoru/gtox.git"
 
 LICENSE="GPL-3"
 SLOT="0"

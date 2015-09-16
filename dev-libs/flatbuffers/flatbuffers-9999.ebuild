@@ -9,7 +9,8 @@ inherit eutils git-2 cmake-utils
 DESCRIPTION="Memory Efficient Serialization Library"
 HOMEPAGE="http://google.github.io/flatbuffers/"
 SRC_URI=""
-EGIT_REPO_URI="git://github.com/google/flatbuffers.git"
+EGIT_REPO_URI="git://github.com/google/flatbuffers.git
+	https://github.com/google/flatbuffers.git"
 
 LICENSE="Apache-2.0"
 SLOT="0"
