@@ -8,8 +8,8 @@ inherit eutils fdo-mime git-2 gnome2-utils toolchain-funcs
 
 DESCRIPTION="Lightweight Tox client"
 HOMEPAGE="https://github.com/notsecure/uTox"
-EGIT_REPO_URI="git://github.com/notsecure/uTox.git
-	https://github.com/notsecure/uTox.git"
+EGIT_REPO_URI="git://github.com/GrayHatter/uTox.git
+	https://github.com/GrayHatter/uTox.git"
 
 LICENSE="GPL-3"
 SLOT="0"
