@@ -58,7 +58,7 @@ src_prepare() {
 
 src_configure() {
 	econf \
-		$(use_enable log) \
+		$(use_enable log logging) \
 		$(usex log "--with-log-level=${loglevel##* }" "") \
 		$(use_enable av) \
 		$(use_enable test tests) \
