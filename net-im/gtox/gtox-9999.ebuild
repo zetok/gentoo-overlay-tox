@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
@@ -18,25 +18,26 @@ KEYWORDS=""
 #IUSE="+filter_audio gtk X"
 
 DEPEND="
+	${RDEPEND}
 	dev-util/cmake
-	>=sys-devel/gcc-4.9.0
+	>=sys-devel/gcc-4.9.0"
+RDEPEND="
 	>=dev-cpp/gtkmm-3.16.0
-	dev-libs/atk
-	dev-libs/glib:2
 	dev-cpp/glibmm
-	dev-libs/flatbuffers
-	x11-libs/gtk+:3
-	x11-libs/cairo[X]
-	x11-libs/pango[X]
-	x11-libs/libnotify
-	gnome-base/librsvg
-	dev-db/sqlite:3
-	sys-devel/gettext
-	media-libs/libcanberra[gtk3,sound]
 	>=dev-cpp/gstreamermm-1.0.10
+	dev-db/sqlite:3
+	dev-libs/atk
+	dev-libs/flatbuffers
+	dev-libs/glib:2
+	gnome-base/librsvg
+	media-libs/libcanberra[gtk3,sound]
 	net-libs/tox[av]
+	sys-devel/gettext
+	x11-libs/cairo[X]
+	x11-libs/gtk+:3
+	x11-libs/libnotify
+	x11-libs/pango[X]
 	x11-libs/libX11"
-RDEPEND="${DEPEND}"
 
 CMAKE_USE_DIR="${S}/src"
 

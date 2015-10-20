@@ -1,10 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
-inherit eutils git-2 cmake-utils
+inherit git-2 cmake-utils
 
 DESCRIPTION="Memory Efficient Serialization Library"
 HOMEPAGE="http://google.github.io/flatbuffers/"
@@ -18,7 +18,7 @@ KEYWORDS=""
 IUSE="-doc -examples -java"
 
 RDEPEND="
-	java? ( virtual/jdk )"
+	java? ( virtual/jdk:* )"
 DEPEND="
 	dev-util/cmake
 	${RDEPEND}"
