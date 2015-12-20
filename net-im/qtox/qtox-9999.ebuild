@@ -39,7 +39,8 @@ DEPEND="
 			x11-libs/pango[X] )
 	net-libs/tox[av]
 	X? ( x11-libs/libX11
-		x11-libs/libXScrnSaver )"
+		x11-libs/libXScrnSaver )
+	dev-db/sqlcipher"
 RDEPEND="${DEPEND}"
 
 pkg_pretend() {
