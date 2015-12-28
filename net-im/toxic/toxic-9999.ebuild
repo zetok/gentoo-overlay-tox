@@ -25,7 +25,8 @@ RDEPEND="
 	sound-notify? ( media-libs/freealut )
 	X? ( x11-libs/libX11 )
 	sys-libs/ncurses
-	dev-libs/libconfig"
+	dev-libs/libconfig
+	media-gfx/qrencode"
 DEPEND="${RDEPEND}
 	app-text/asciidoc
 	virtual/pkgconfig"
