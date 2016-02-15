@@ -18,7 +18,8 @@ IUSE="+av +libnotify +sound-notify +X"
 
 RDEPEND="
 	av? (
-		media-libs/openal
+		( || ( media-libs/openal[alsa]
+			media-libs/openal[pulseaudio] ) )
 		net-libs/tox[av] )
 	!av? ( net-libs/tox )
 	libnotify? ( x11-libs/libnotify )
